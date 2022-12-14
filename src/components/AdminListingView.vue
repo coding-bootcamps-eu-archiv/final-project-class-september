@@ -6,6 +6,8 @@
         <tr>
           <th>Name(post)</th>
           <th>Type(CBE, Instagram, Youtube)</th>
+          <th>
+          </th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -15,9 +17,11 @@
 
 <script>
 import AdminListingViewRow from "@/components/AdminListingViewRow.vue";
+
 export default {
   components: {
     AdminListingViewRow,
+
   },
   data() {
     return {

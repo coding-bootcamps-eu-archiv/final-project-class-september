@@ -27,3 +27,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+td {
+  display: flex;
+
+  gap: 5px;
+}
+</style>

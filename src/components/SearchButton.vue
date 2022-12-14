@@ -1,11 +1,11 @@
 <template>
-  <button id="search-button" class="bg-clr-white bdr-r-025rem bdr-05-s-p01">
+  <button id="search-button" class="background">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
+      width="30"
+      height="30"
       fill="currentColor"
-      class="clr-purple-01"
+  
       viewBox="0 0 16 16"
     >
       <path
@@ -30,26 +30,17 @@ export default {
 </script>
 
 <style scoped>
-/******** utilities *******/
+button {
+  padding-block: .5rem;
+  padding-inline: .7rem;
 
-/***regular***/
+  background-color: var(--clr-purple-01);
 
-/*fnt-colours*/
-.clr-purple-01 {
-  color: var(--clr-purple-01);
-}
-
-/*bg-colours*/
-.bg-clr-white {
-  background-color: var(--clr-white-02);
-}
-
-/*border*/
-.bdr-05-s-p01 {
-  border: 0.5rem solid var(--clr-purple-01);
-}
-
-.bdr-r-025rem {
+  border: none;
   border-radius: 0.25rem;
+}
+
+svg {
+  color: var(--clr-white-02);
 }
 </style>
