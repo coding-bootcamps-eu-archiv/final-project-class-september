@@ -2,6 +2,8 @@
   <AppHeader />
 
   <main>
+    <SearchInput />
+    <SearchButton />
     <AdminListingView />
     <div id="app"></div>
   </main>
@@ -10,12 +12,16 @@
 <script>
 import AppHeader from "@/components/AppHeader.vue";
 import AdminListingView from "@/components/AdminListingView.vue";
+import SearchInput from "@/components/SearchInput.vue";
+import SearchButton from "@/components/SearchButton.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
     AdminListingView,
+    SearchInput,
+    SearchButton,
   },
 };
 </script>
