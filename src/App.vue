@@ -1,30 +1,56 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <header>
+    <h1>Attendee Feed</h1>
+    <h2>Coding Bootcamps Europe</h2>
+  </header>
+  <main>
+    <button id="create-suggested-post">create</button>
+    <h3>Post</h3>
+    <section>
+      <div>
+        <input type="text" name="search-bar" id="search-bar" />
+        <label for="search-bar">search post</label>
+      </div>
+      <button id="search-button">search</button>
+    </section>
+    <section>
+      <div>
+        <label for="instagram">Instagram</label>
+        <input type="radio" name="instagram" id="instagram" />
+      </div>
+      <div>
+        <label for="youtube">Youtube</label>
+        <input type="radio" name="youtube" id="youtube" />
+      </div>
+      <div>
+        <label for="cbe">Coding Bootcamps Europe</label>
+        <input type="radio" name="cbe" id="cbe" />
+      </div>
+    </section>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Name(post)</th>
+            <th>Type(CBE, Instagram, Youtube)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <button>add</button>
+          <button>remove</button>
+          <button>edit</button>
+          <AdminListingView />
+        </tbody>
+      </table>
+    </section>
+    <div>
+      <button>Back</button>
+    </div>
+  </main>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {};
+</script>
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style></style>
