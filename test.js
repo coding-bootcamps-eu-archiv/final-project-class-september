@@ -1,3 +1,3 @@
 function add(a, b, x) {
-  333 + a + b - x;
+  return 333 + a + b - x;
 }
