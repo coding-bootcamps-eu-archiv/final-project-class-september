@@ -1,91 +1,56 @@
 <template>
-  <AppHeader />
-
+  <header>
+    <h1>Attendee Feed</h1>
+    <h2>Coding Bootcamps Europe</h2>
+  </header>
   <main>
-    <AdminListingView />
-    <div id="app"></div>
+    <button id="create-suggested-post">create</button>
+    <h3>Post</h3>
+    <section>
+      <div>
+        <input type="text" name="search-bar" id="search-bar" />
+        <label for="search-bar">search post</label>
+      </div>
+      <button id="search-button">search</button>
+    </section>
+    <section>
+      <div>
+        <label for="instagram">Instagram</label>
+        <input type="radio" name="instagram" id="instagram" />
+      </div>
+      <div>
+        <label for="youtube">Youtube</label>
+        <input type="radio" name="youtube" id="youtube" />
+      </div>
+      <div>
+        <label for="cbe">Coding Bootcamps Europe</label>
+        <input type="radio" name="cbe" id="cbe" />
+      </div>
+    </section>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Name(post)</th>
+            <th>Type(CBE, Instagram, Youtube)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <button>add</button>
+          <button>remove</button>
+          <button>edit</button>
+          <AdminListingView />
+        </tbody>
+      </table>
+    </section>
+    <div>
+      <button>Back</button>
+    </div>
   </main>
 </template>
 
 <script>
-import AppHeader from "@/components/AppHeader.vue";
-import AdminListingView from "@/components/AdminListingView.vue";
-
-export default {
-  name: "App",
-  components: {
-    AppHeader,
-    AdminListingView,
-  },
-};
+export default {};
 </script>
 
-<style>
-/***** general stylings *****/
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  font-size: 16px;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
-template {
-  background-color: var(--clr-magenta-01);
-}
-
-:root {
-  --clr-purple-01: hsl(268, 75%, 44%);
-  --clr-purple-02: hsl(268, 58%, 55%);
-  --clr-white-02: hsl(0, 0%, 98%);
-  --clr-grey: hsla(0, 0%, 0%, 0.6);
-  --clr-black: hsl(0, 0%, 0%);
-  --clr-magenta-01: hotpink; /*delete*/
-  --clr-meganta-02: salmon; /*release?*/
-  --clr-blue-01: dodgerblue; /*edit*/
-}
-
-/******** utilities *******/
-
-/***fnt-sizes***/
-
-/***fnt-colours***/
-.clr-white-02 {
-  color: var(--clr-white-02);
-}
-
-.clr-black {
-  color: var(--clr-black);
-}
-
-.clr-purple-01 {
-  color: var(--clr-purple-01);
-}
-
-/***bg-colours***/
-.bg-clr-white {
-  background-color: var(--clr-white-02);
-}
-
-.bg-clr-purple {
-  background-color: var(--clr-purple-01);
-}
-
-/***border***/
-.brd-0 {
-  border: none;
-}
-/*s=solid, p=purple*/
-.brd-1rem-s-p-01 {
-  border: 1rem solid var(--clr-purple-01);
-}
-
-/***boxing***/
-
-/*tbd*/
-</style>
+<style></style>
