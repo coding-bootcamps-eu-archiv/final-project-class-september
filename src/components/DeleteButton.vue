@@ -42,5 +42,6 @@ export default {
   background-color: var(--clr-white-02);
   box-shadow: 1px 1px 1px px var(--clr-magenta-01);
   border: 2px solid var(--clr-magenta-01);
+  cursor: pointer;
 }
 </style>

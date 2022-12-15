@@ -39,5 +39,6 @@ export default {
   color: var(--clr-meganta-02);
   background-color: var(--clr-white-02);
   border: 2px solid var(--clr-meganta-02);
+  cursor: pointer;
 }
 </style>

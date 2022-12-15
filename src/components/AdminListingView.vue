@@ -85,11 +85,32 @@ export default {
 </script>
 
 <style scoped>
+.name {
+  width: 15%;
+  margin-right: 3px;
+  color: var(--clr-white-02);
+}
+.type {
+  width: 70%;
+  color: var(--clr-white-02);
+}
+
+.options {
+  width: 30%;
+  color: var(--clr-white-02);
+}
+.table-item-row {
+  position: relativ;
+  margin-left: 100px;
+  background: var(--clr-purple-01);
+}
 .table-item__table {
+  position: relative;
+  background-color: var(--clr-purple-02);
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
   width: 100%;
 }
 
