@@ -28,7 +28,6 @@ export default {
   border-radius: 50%;
   background-color: var(--clr-meganta-02);
   border: none;
-  color: black
 }
 .btn-release:hover {
   color: var(--clr-meganta-02);
