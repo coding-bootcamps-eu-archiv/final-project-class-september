@@ -2,9 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 import AdminMainPageView from "@/views/admin/AdminMainPageView.vue";
 import AdminWrapperView from "@/views/admin/AdminWrapperView.vue";
 import AdminEditView from "@/views/admin/AdminEditView.vue";
+import AdminCreatePostView from "@/views/admin/AdminCreatePostView.vue";
 
 import PublicWrapperView from "@/views/public/PublicWrapperView.vue";
-import PublicViewMainPageView from "@/views/public/PublicViewMainPageView.vue";
+import PublicMainPageView from "@/views/public/PublicMainPageView.vue";
+import PublicSuggestionsView from "@/views/public/PublicSuggestionView.vue";
 
 const routes = [
   {
@@ -21,6 +23,11 @@ const routes = [
         name: "admin-edit",
         component: AdminEditView,
       },
+      {
+        path: "create",
+        name: "admin-create",
+        component: AdminCreatePostView,
+      },
     ],
   },
   {
@@ -31,7 +38,12 @@ const routes = [
       {
         path: "",
         name: "public-index",
-        component: PublicViewMainPageView,
+        component: PublicMainPageView,
+      },
+      {
+        path: "suggestion",
+        name: "public-suggestion",
+        component: PublicSuggestionsView,
       },
     ],
   },
