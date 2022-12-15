@@ -29,13 +29,14 @@ export default {
 
 <style scoped>
 .btn-delete {
-  padding-top: 5px;
+  padding-top: 4px;
   height: 40px;
   width: 40px;
   color: var(--clr-white-02);
   background-color: var(--clr-magenta-01);
   border-radius: 50%;
   border: none;
+  
 }
 .btn-delete:hover {
   color: var(--clr-magenta-01);

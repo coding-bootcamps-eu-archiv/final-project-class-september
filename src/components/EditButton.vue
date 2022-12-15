@@ -36,6 +36,7 @@ export default {
   border-radius: 50%;
   background-color: var(--clr-blue-01);
   border: none;
+  
 }
 .btn-edit:hover {
   background-color: var(--clr-white-02);

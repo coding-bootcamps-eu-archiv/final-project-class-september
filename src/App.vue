@@ -81,7 +81,7 @@ template {
   border: none;
 }
 /*s=solid, p=purple*/
-.brd-1rem-s-p-01 {
+.brd-rem-s-p-01 {
   border: 1rem solid var(--clr-purple-01);
 }
 

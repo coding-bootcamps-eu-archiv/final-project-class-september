@@ -54,6 +54,8 @@ export default {
 <style scoped>
 .options-style {
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 td {
