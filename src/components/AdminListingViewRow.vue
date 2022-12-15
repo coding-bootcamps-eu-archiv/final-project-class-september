@@ -1,11 +1,12 @@
 <template>
   <tr>
-    <td>
+    <td>{{ title }}</td>
+    <td>{{ type }}</td>
+    <td class="options-style">
       <DeleteButton />
       <EditButton />
       <ReleaseButton />
     </td>
-    <td></td>
   </tr>
 </template>
 
@@ -20,6 +21,10 @@ export default {
       text: "Bam Bam",
     };
   },
+  props: {
+    title: String,
+    type: String,
+  },
   components: {
     DeleteButton,
     EditButton,
@@ -29,9 +34,11 @@ export default {
 </script>
 
 <style scoped>
-td {
-  display: flex;
+.options-style {
+  text-align: center;
+}
 
-  gap: 5px;
+td {
+  padding: 20px;
 }
 </style>
