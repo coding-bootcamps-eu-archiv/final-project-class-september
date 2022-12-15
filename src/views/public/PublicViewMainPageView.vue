@@ -1,5 +1,7 @@
 <template>
-  <nav><router-link to="/admin">Switch to Admin Main Page</router-link></nav>
+  <div class="route-link">
+    <nav><router-link to="/admin">Switch to Admin Main Page</router-link></nav>
+  </div>
   <h1 class="public-heading">Public-Main-Page</h1>
   <SearchInput />
   <SearchButton />
@@ -17,8 +19,22 @@ export default {
   },
 };
 </script>
+
 <style scoped>
+.route-link {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: end;
+  margin-right: 20px;
+  display: none;
+}
+nav {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
 .public-heading {
+  margin-top: 40px;
   text-align: center;
 }
 </style>
