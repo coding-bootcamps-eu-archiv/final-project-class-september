@@ -1,23 +1,25 @@
 <template>
-  <section>
-    <table class="table-item__table">
-      <thead>
-        <tr>
-          <th class="name">Name(post)</th>
-          <th class="type">Type(CBE, Instagram, Youtube)</th>
-          <th class="options">Options</th>
-        </tr>
-      </thead>
-      <tbody>
-        <AdminListingViewRow
-          v-for="entry in entries"
-          :key="entry.id"
-          :title="entry.title"
-          :type="entry.type"
-        />
-      </tbody>
-    </table>
-  </section>
+  <main>
+    <section>
+      <table class="table-item__table">
+        <thead class="table-item-row">
+          <tr class="wrapper">
+            <th class="name">Name(post)</th>
+            <th class="type">Type(CBE, Instagram, Youtube)</th>
+            <th class="options">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <AdminListingViewRow
+            v-for="entry in entries"
+            :key="entry.id"
+            :title="entry.title"
+            :type="entry.type"
+          />
+        </tbody>
+      </table>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -109,21 +111,36 @@ export default {
 </script>
 
 <style scoped>
+.name {
+  width: 15%;
+  margin-right: 3px;
+  color: var(--clr-white-02);
+}
+.type {
+  width: 70%;
+  color: var(--clr-white-02);
+}
+
+.options {
+  width: 30%;
+  color: var(--clr-white-02);
+}
+.table-item-row {
+  position: relativ;
+  margin-left: 100px;
+  background: var(--clr-purple-01);
+}
 .table-item__table {
+  position: relative;
+  background-color: var(--clr-purple-02);
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
   width: 100%;
 }
 
-.Name {
-  width: 50%;
-}
-.type {
-  width: 30%;
-}
-.options {
-  width: 20%;
+main {
+  background-color: var(--clr-purple-02);
 }
 </style>

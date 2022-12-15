@@ -47,6 +47,7 @@ template {
   --clr-magenta-01: hotpink; /*delete*/
   --clr-meganta-02: salmon; /*release?*/
   --clr-blue-01: dodgerblue; /*edit*/
+  --clr-green-01: rgb(63, 174, 63); /*create*/
 }
 
 /******** utilities *******/
