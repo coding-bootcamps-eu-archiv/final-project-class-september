@@ -4,7 +4,7 @@
     <td>{{ type }}</td>
     <td class="options-style">
       <DeleteButton @delete="triggerDelete" />
-      <EditButton @edit="triggerEdit" />
+      <EditButton @edit="triggerEdit" :id="id" />
       <ReleaseButton @release="triggerRelease" />
     </td>
   </tr>
@@ -26,6 +26,7 @@ export default {
     type: String,
     isCbeAnnouncement: Boolean,
     class: Boolean,
+    id: String,
   },
   components: {
     DeleteButton,

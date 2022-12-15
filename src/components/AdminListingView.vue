@@ -56,6 +56,7 @@
           <AdminListingViewRow
             v-for="(entry, index) in entries"
             :key="entry.id"
+            :id="entry.id"
             :title="entry.title"
             :type="entry.type"
             @delete="triggerDelete(index)"
