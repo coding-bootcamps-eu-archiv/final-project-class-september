@@ -36,6 +36,7 @@ export default {
   background-color: var(--clr-magenta-01);
   border-radius: 50%;
   border: none;
+  
 }
 .btn-delete:hover {
   color: var(--clr-magenta-01);

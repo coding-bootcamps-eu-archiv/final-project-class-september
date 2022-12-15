@@ -1,14 +1,19 @@
 <template>
-    <div class="sticky">
-      <div class="head">
-        <header>
-          <h1 class="clr-white-02">ATTENDEE FEED</h1>
-          <h2 class="clr-white-02">Coding Bootcamps Europe</h2>
-        </header>
-      </div>
-      <div class="arrow"></div>
-      <div class="arrow arrow-sdw"></div>
+  <div>
+    <div class="head">
+      <header>
+        <h1 class="clr-white-02">ATTENDEE FEED</h1>
+        <h2 class="clr-white-02">Coding Bootcamps Europe</h2>
+        <img
+          class="CBE"
+          src="https://image.jimcdn.com/app/cms/image/transf/dimension=230x10000:format=png/path/s0bc1816f4b388266/image/i2c7016bab2e2fa88/version/1647271231/image.png"
+          alt=""
+        />
+      </header>
     </div>
+    <div class="arrow"></div>
+    <div class="arrow arrow-sdw"></div>
+  </div>
 </template>
 
 <script>
@@ -19,11 +24,16 @@ export default {
 
 <style scoped>
 /***general***/
+.CBE {
+  width: 60px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
 
 .head {
   background-color: var(--clr-purple-01);
 
-  padding-block: 1.5rem;
+  padding-block: 1rem;
 
   display: flex;
   justify-content: center;
@@ -41,19 +51,6 @@ h2 {
 }
 
 /***specific***/
-
-sticky {
-  position: -webkit-sticky;
-  position: sticky;
-
-  top: 0;
-  height: 200px;
-  background-color: var(--clr-purple-01);
-  z-index: 9;
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 70%, 0 50%);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
 .arrow {
   position: relative;
   height: 30px;
@@ -63,9 +60,9 @@ sticky {
 
 .arrow-sdw {
   background-color: var(--clr-purple-01);
-  height: 80px;
+  height: 70px;
   position: absolute;
-  top: 90px;
+  top: 150px;
   left: 0;
   right: 0;
   clip-path: polygon(0 0, 100% 0, 100% 40%, 50% 80%, 0 40%);
