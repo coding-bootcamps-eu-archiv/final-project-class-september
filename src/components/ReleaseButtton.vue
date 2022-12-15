@@ -29,7 +29,7 @@ export default {
 .btn-release {
   height: 40px;
   width: 40px;
-  padding-top: 5px;
+  padding-top: 4px;
   color: var(--clr-white-02);
   border-radius: 50%;
   background-color: var(--clr-meganta-02);

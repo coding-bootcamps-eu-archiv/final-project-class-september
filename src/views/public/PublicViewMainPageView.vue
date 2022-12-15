@@ -9,7 +9,7 @@
   <SearchButton />
   <router-view></router-view>
   <div class="create-wrapper">
-    <button class="create">+ Create Post</button>
+    <button class="create">Add Suggestions</button>
   </div>
 </template>
 

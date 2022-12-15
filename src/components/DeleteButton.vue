@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 .btn-delete {
-  padding-top: 5px;
+  padding-top: 4px;
   height: 40px;
   width: 40px;
   color: var(--clr-white-02);

@@ -1,29 +1,28 @@
 <template>
-  <section>
-    <table class="table-item__table">
-      <thead>
-        <tr>
-          <th class="name">Name(post)</th>
-          <th class="type">Type(CBE, Instagram, Youtube)</th>
-          <th class="options">Options</th>
-        </tr>
-      </thead>
-      <tbody>
-        <AdminListingViewRow
-          v-for="(entry, index) in entries"
-          :key="entry.id"
-          :title="entry.title"
-          :type="entry.type"
-          @delete="triggerDelete(index)"
-          @edit="triggerEdit(index)"
-          @release="triggerRelease(index)"
-          :class="{
-            'cbe-announcement-true': entry.isCbeAnnnouncement === true,
-          }"
-        />
-      </tbody>
-    </table>
-  </section>
+  <main>
+    <section class="table-item">
+      <table class="table-item__table">
+        <thead>
+          <tr>
+            <th class="table-item__table-head-name">Name(post)</th>
+            <th class="table-item__table-head--isbn">
+              Type(CBE, Instagram, Youtube)
+            </th>
+            <th class="table-item__table-head--action"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <AdminListingViewRow
+            v-for="entry in entries"
+            :key="entry.id"
+            :title="entry.title"
+            :type="entry.type"
+            class="table-item__table-row"
+          />
+        </tbody>
+      </table>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -85,49 +84,44 @@ export default {
 </script>
 
 <style scoped>
-.name {
-  width: 15%;
-  margin-right: 3px;
-  color: var(--clr-white-02);
-}
-.type {
-  width: 70%;
-  color: var(--clr-white-02);
-}
-
-.options {
-  width: 30%;
-  color: var(--clr-white-02);
-}
-.table-item-row {
-  position: relativ;
-  margin-left: 100px;
-  background: var(--clr-purple-01);
-}
 .table-item__table {
-  position: relative;
-  background-color: var(--clr-purple-02);
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   width: 100%;
 }
-
-.cbe-announcement-true {
-  border: purple;
-  background-color: black;
+.table-item__table-head-name {
+  width: 40%;
 }
-.cbe-announcement-false {
-  border: grey;
-}
-.Name {
-  width: 50%;
-}
-.type {
-  width: 30%;
-}
-.options {
+.table-item__table-head-isbn {
   width: 20%;
+}
+.table-item__table-head-actions {
+  width: 15%;
+  padding-left: 500px;
+}
+.table-item__table-row {
+  opacity: 0;
+  padding: 5px;
+  transition: opacity 500ms;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.table-item__table thead tr {
+  background-color: var(--clr-purple-01);
+  color: var(--clr-white-02);
+  text-align: left;
+}
+.table-item__table th {
+  padding: 12px 15px;
+}
+.table-item__table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+main {
+  background-color: var(--clr-purple-02);
 }
 </style>
