@@ -1,11 +1,11 @@
 <template>
   <tr>
-    <td>{{ title }}</td>
+    <td :class="classForCbeAnnouncement">{{ title }}</td>
     <td>{{ type }}</td>
     <td class="options-style">
-      <DeleteButton />
-      <EditButton />
-      <ReleaseButton />
+      <DeleteButton @delete="triggerDelete" />
+      <EditButton @edit="triggerEdit" />
+      <ReleaseButton @release="triggerRelease" />
     </td>
   </tr>
 </template>
@@ -24,11 +24,29 @@ export default {
   props: {
     title: String,
     type: String,
+    isCbeAnnouncement: Boolean,
+    class: Boolean,
   },
   components: {
     DeleteButton,
     EditButton,
     ReleaseButton,
+  },
+  computed: {
+    classForCbeAnnouncement() {
+      return this.class;
+    },
+  },
+  methods: {
+    triggerDelete() {
+      this.$emit("delete");
+    },
+    triggerEdit() {
+      this.$emit("edit");
+    },
+    triggerRelease() {
+      this.$emit("release");
+    },
   },
 };
 </script>

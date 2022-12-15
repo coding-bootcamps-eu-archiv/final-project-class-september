@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-delete">
+  <button class="btn-delete" @click="triggerDelete">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -18,6 +18,12 @@
 <script>
 export default {
   name: "DeleteButton",
+
+  methods: {
+    triggerDelete() {
+      this.$emit("delete");
+    },
+  },
 };
 </script>
 
