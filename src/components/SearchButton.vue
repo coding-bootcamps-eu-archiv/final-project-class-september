@@ -1,4 +1,4 @@
-
+<template><h1></h1></template>
 
 <script>
 export default {
@@ -16,8 +16,8 @@ export default {
 
 <style scoped>
 button {
-  padding-block: .5rem;
-  padding-inline: .7rem;
+  padding-block: 0.5rem;
+  padding-inline: 0.7rem;
 
   background-color: var(--clr-purple-01);
 
