@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-edit">
+  <button class="btn-edit" @click="triggerEdit">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -18,6 +18,12 @@
 <script>
 export default {
   name: "EditButton",
+
+  methods: {
+    triggerEdit() {
+      this.$emit("edit");
+    },
+  },
 };
 </script>
 

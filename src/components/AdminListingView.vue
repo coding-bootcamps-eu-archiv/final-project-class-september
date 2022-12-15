@@ -10,10 +10,16 @@
       </thead>
       <tbody>
         <AdminListingViewRow
-          v-for="entry in entries"
+          v-for="(entry, index) in entries"
           :key="entry.id"
           :title="entry.title"
           :type="entry.type"
+          @delete="triggerDelete(index)"
+          @edit="triggerEdit(index)"
+          @release="triggerRelease(index)"
+          :class="{
+            'cbe-announcement-true': entry.isCbeAnnnouncement === true,
+          }"
         />
       </tbody>
     </table>
@@ -31,72 +37,8 @@ export default {
     return {
       entries: [
         {
-          title: "Test Event Youtube Post",
-          type: "Youtube",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e1",
-        },
-        {
-          title: "Test Event Insta Post",
-          type: "Instagram",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e4",
-        },
-        {
-          title: "Test Event Insta Post",
-          type: "Instagram",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e5",
-        },
-        {
-          title: "Test Event Insta Post",
-          type: "Instagram",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e8",
-        },
-        {
-          title: "Test Event Youtube Post",
-          type: "Youtube",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e1",
-        },
-        {
-          title: "Test Event Youtube Post",
-          type: "Youtube",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e1",
-        },
-        {
-          title: "Test Event Youtube Post",
-          type: "Youtube",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e1",
-        },
-        {
-          title: "Test Event Youtube Post",
-          type: "Youtube",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e1",
-        },
-        {
-          title: "Test Event Youtube Post",
-          type: "Youtube",
+          title: "Test Event",
+          type: "event",
           url: "https//foo.bar",
           active: false,
           isCbeAnnouncement: true,
@@ -104,6 +46,40 @@ export default {
         },
       ],
     };
+  },
+  async created() {
+    try {
+      const response = await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries"
+      );
+
+      const data = await response.json();
+
+      this.entries = data;
+      console.log(this.entries);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  methods: {
+    triggerDelete(index) {
+      console.log(
+        "i am the Delete event, triggered in the highest component: AdminListingView"
+      );
+      console.log(this.entries[index]);
+    },
+    triggerEdit(index) {
+      console.log(
+        "i am the Edit event, triggered in the highest component: AdminListingView"
+      );
+      console.log(this.entries[index]);
+    },
+    triggerRelease(index) {
+      console.log(
+        "i am the Release event, triggered in the highest component: AdminListingView"
+      );
+      console.log(this.entries[index]);
+    },
   },
 };
 </script>
@@ -117,6 +93,13 @@ export default {
   width: 100%;
 }
 
+.cbe-announcement-true {
+  border: purple;
+  background-color: black;
+}
+.cbe-announcement-false {
+  border: grey;
+}
 .Name {
   width: 50%;
 }
