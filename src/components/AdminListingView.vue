@@ -83,16 +83,7 @@ export default {
   },
   data() {
     return {
-      entries: [
-        {
-          title: "Test Event",
-          type: "event",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e1",
-        },
-      ],
+      entries: [],
     };
   },
   async created() {
@@ -112,11 +103,26 @@ export default {
     }
   },
   methods: {
-    triggerDelete(index) {
-      console.log(
-        "i am the Delete event, triggered in the highest component: AdminListingView"
+    async triggerDelete(index) {
+      const id = this.entries[index].id;
+      await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
-      console.log(this.entries[index]);
+
+      // After the DELETE request is completed, make a new fetch call to load the updated data
+      const response = await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries"
+      );
+      const data = await response.json();
+
+      // Update the data in your application with the new data
+      this.entries = data;
     },
     triggerEdit(index) {
       console.log(
