@@ -1,5 +1,5 @@
 <template>
-  <a v-bind:href="`http://localhost:8080/admin/edit/${id}`">
+  <a v-bind:href="`/admin/edit/${id}`">
     <button class="btn-edit" @click="triggerEdit">
       <svg
         xmlns="http://www.w3.org/2000/svg"
