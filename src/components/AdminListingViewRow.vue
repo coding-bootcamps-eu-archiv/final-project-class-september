@@ -1,6 +1,9 @@
 <template>
   <tr>
-    <td :class="classForCbeAnnouncement">{{ title }}</td>
+    <td>
+      <a :href="url" class="link-style"> {{ title }}</a>
+    </td>
+
     <td>{{ type }}</td>
     <td class="options-style">
       <DeleteButton @delete="triggerDelete" />
@@ -27,6 +30,7 @@ export default {
     isCbeAnnouncement: Boolean,
     class: Boolean,
     id: String,
+    url: String,
   },
   components: {
     DeleteButton,
@@ -61,5 +65,10 @@ export default {
 
 td {
   padding: 20px;
+}
+
+.link-style {
+  text-decoration: none;
+  color: black;
 }
 </style>

@@ -58,6 +58,7 @@
               v-for="(entry, index) in entries"
               :key="entry.id"
               :id="entry.id"
+              :url="entry.url"
               :title="entry.title"
               :type="entry.type"
               @delete="triggerDelete(index)"

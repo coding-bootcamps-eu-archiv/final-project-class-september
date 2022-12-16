@@ -5,7 +5,7 @@ import AdminEditView from "@/views/admin/AdminEditView.vue";
 import AdminCreatePostView from "@/views/admin/AdminCreatePostView.vue";
 
 import PublicWrapperView from "@/views/public/PublicWrapperView.vue";
-import PublicMainPageView from "@/views/public/PublicViewMainPageView.vue";
+import PublicMainPageView from "@/views/public/PublicMainPageView.vue";
 import PublicSuggestionsView from "@/views/public/PublicSuggestionView.vue";
 
 const routes = [
