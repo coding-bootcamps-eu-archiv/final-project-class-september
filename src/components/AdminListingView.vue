@@ -76,32 +76,14 @@
 
 <script>
 import AdminListingViewRow from "@/components/AdminListingViewRow.vue";
+import getEntriesMixin from "@/mixins/getEntries";
 
 export default {
   components: {
     AdminListingViewRow,
   },
-  data() {
-    return {
-      entries: [],
-    };
-  },
-  async created() {
-    try {
-      const response = await fetch(
-        "https://attendee-feed-app-api.jgreg.uber.space/entries/"
-      );
-      console.log(response);
-      console.log(process.env.VUE_APP_API_URL);
+  mixins: [getEntriesMixin],
 
-      const data = await response.json();
-
-      this.entries = data;
-      console.log(this.entries);
-    } catch (error) {
-      console.error(error);
-    }
-  },
   methods: {
     async triggerDelete(index) {
       const id = this.entries[index].id;

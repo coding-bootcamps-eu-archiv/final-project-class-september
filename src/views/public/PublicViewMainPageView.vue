@@ -10,59 +10,23 @@
   </div>
   <router-view></router-view>
   <div class="create-wrapper">
-    <button class="create">+ add suggestions</button>
+    <router-link to="/public/suggestion">
+      <button class="create">+ add suggestions</button>
+    </router-link>
   </div>
   <main>
     <section>
       <div class="around">
         <table class="table-item">
-          <tr>
+          <tr v-for="entry of entries" :key="entry.id">
             <td>
-              <div class="title">Queen
-                <h2 >
-                  <a
-                    href="https://www.youtube.com/watch?v=KXw8CRapg7k"
-                    class="story-link"
-                    >we are the champions</a
-                  >
-                </h2>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="description">
+              <div class="title">
+                Queen
                 <h2>
                   <a
                     href="https://www.youtube.com/watch?v=KXw8CRapg7k"
                     class="story-link"
-                    >we are the champions</a
-                  >
-                </h2>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="description">
-                <h2>
-                  <a
-                    href="https://www.youtube.com/watch?v=KXw8CRapg7k"
-                    class="story-link"
-                    >we are the champions</a
-                  >
-                </h2>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="description">
-                <h2>
-                  <a
-                    href="https://www.youtube.com/watch?v=KXw8CRapg7k"
-                    class="story-link"
-                    >we are the champions</a
+                    >{{ entry.title }}</a
                   >
                 </h2>
               </div>
@@ -173,12 +137,19 @@
 <script>
 import SearchInput from "@/components/SearchInput.vue";
 import SearchButton from "@/components/SearchButton.vue";
+import getEntriesMixin from "@/mixins/getEntries";
 export default {
+  data() {
+    return {
+      urlParams: "?active_ne=false",
+    };
+  },
   name: "publicView",
   components: {
     SearchInput,
     SearchButton,
   },
+  mixins: [getEntriesMixin],
 };
 </script>
 
@@ -323,8 +294,6 @@ footer {
 }
 
 _.title {
-  
-  
   margin-left: 30px;
 }
 .icons {
