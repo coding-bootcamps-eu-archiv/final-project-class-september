@@ -95,7 +95,9 @@ export default {
   },
   async created() {
     try {
-      const response = await fetch(process.env.VUE_APP_API_URL + "/entries");
+      const response = await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries/"
+      );
       console.log(response);
       console.log(process.env.VUE_APP_API_URL);
 

@@ -74,7 +74,7 @@ export default {
         isCbeAnnouncement: this.isCbeAnnouncement,
       };
 
-      await fetch(process.env.VUE_APP_API_URL + "/entries", {
+      await fetch("https://attendee-feed-app-api.jgreg.uber.space/entries/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

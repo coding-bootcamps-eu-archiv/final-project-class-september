@@ -55,6 +55,8 @@ export default {
       url: "",
       active: "",
       isCbeAnnouncement: "",
+      createdAt: "",
+      isSuggestion: "",
     };
   },
   methods: {
@@ -66,15 +68,20 @@ export default {
         url: this.url,
         active: this.active,
         isCbeAnnouncement: this.isCbeAnnouncement,
+        createdAt: this.createdAt,
+        isSuggestion: this.isSuggestion,
       };
 
-      await fetch(process.env.VUE_APP_API_URL + "/entries/" + id, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(currentEntryData),
-      });
+      await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(currentEntryData),
+        }
+      );
 
       location.href = "/";
     },
@@ -89,7 +96,7 @@ export default {
   async created() {
     const id = this.$route.params.id;
     const response = await fetch(
-      process.env.VUE_APP_API_URL + "/entries/" + id
+      "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id
     );
     const jsonData = await response.json();
     this.title = jsonData.title;
@@ -97,6 +104,8 @@ export default {
     this.url = jsonData.url;
     this.active = jsonData.active;
     this.isCbeAnnouncement = jsonData.isCbeAnnouncement;
+    this.createdAt = jsonData.createdAt;
+    this.isSuggestion = jsonData.isSuggestion;
   },
 };
 </script>
