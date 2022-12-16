@@ -2,7 +2,10 @@
   <main>
     <div class="route-link">
       <nav>
-        <router-link to="/">Switch to Public Main Page</router-link>
+        <router-link to="/">Switch to Public Main Page</router-link> <br />
+        <router-link to="/admin/create"
+          >Switch to Admin Create Post Page</router-link
+        >
       </nav>
     </div>
     <h1 class="admin-heading">Admin-Main-Page</h1>
@@ -11,7 +14,9 @@
       <SearchButton />
     </div>
     <div class="create-wrapper">
-      <button class="create">+ Create Post</button>
+      <a href="http://localhost:8080/admin/create">
+        <button class="create">+ Create Post</button>
+      </a>
     </div>
     <AdminListingView />
   </main>
@@ -53,7 +58,6 @@ export default {
   box-shadow: 1px 1px 1px 1px var(--clr-green-01);
   border: 2px solid var(--clr-green-01);
   cursor: pointer;
-  
 }
 .route-link {
   box-sizing: border-box;
