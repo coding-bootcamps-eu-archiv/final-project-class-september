@@ -115,26 +115,31 @@ export default {
         }
       );
 
-      // After the DELETE request is completed, make a new fetch call to load the updated data
       const response = await fetch(
         "https://attendee-feed-app-api.jgreg.uber.space/entries"
       );
       const data = await response.json();
 
-      // Update the data in your application with the new data
       this.entries = data;
     },
     triggerEdit(index) {
-      console.log(
-        "i am the Edit event, triggered in the highest component: AdminListingView"
-      );
       console.log(this.entries[index]);
     },
-    triggerRelease(index) {
-      console.log(
-        "i am the Release event, triggered in the highest component: AdminListingView"
+    async triggerRelease(index) {
+      const currentEntry = this.entries[index];
+      const id = this.entries[index].id;
+      this.entries[index].active = true;
+
+      await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(currentEntry),
+        }
       );
-      console.log(this.entries[index]);
     },
   },
 };
