@@ -33,9 +33,15 @@ export default {
 }
 
 .input-primary {
-  width: 500px;
+  width: 400px;
+  padding: 0.5rem;
+  border: 0.2rem solid var(--clr-purple-01);
+  border-radius: 0.25rem;
 }
 .input-secondary {
-  width: 300px;
+  width: 200px;
+  padding: 0.5rem;
+  border: 0.2rem solid var(--clr-purple-01);
+  border-radius: 0.25rem;
 }
 </style>
