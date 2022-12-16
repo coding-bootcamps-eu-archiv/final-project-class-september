@@ -15,7 +15,7 @@
     </div>
     <div class="create-wrapper">
       <a href="http://localhost:8080/admin/create">
-        <button class="create">+ Create Post</button>
+        <button class="create">+ create</button>
       </a>
     </div>
     <AdminListingView />
@@ -40,24 +40,25 @@ export default {
 .create-wrapper {
   box-sizing: border-box;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 .create {
-  border: 2px solid var(--clr-blue-01);
   border-radius: 10px;
   background-color: var(--clr-white-02);
-  color: var(--clr-blue-01);
+  color: var(--clr-purple-01);
   font-weight: bold;
-  margin-right: 80px;
+  letter-spacing: 3px;
   cursor: pointer;
+  border: 2px solid white;
 }
-.create:hover {
+.create:active {
   background-color: var(--clr-white-02);
   color: var(--clr-green-01);
-  box-shadow: 1px 1px 1px 1px var(--clr-green-01);
-  border: 2px solid var(--clr-green-01);
+
   cursor: pointer;
+  border: 2px solid var(--clr-green-01);
 }
 .route-link {
   box-sizing: border-box;
@@ -71,6 +72,8 @@ nav {
 }
 .admin-heading {
   text-align: center;
+  padding-top: 70px;
+  padding-bottom: 40px;
 }
 div {
   width: 100%;

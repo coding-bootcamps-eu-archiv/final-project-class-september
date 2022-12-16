@@ -28,7 +28,7 @@
       <label for="url">URL</label>
       <GeneralInputField id="url" @input="updateUrl" variant="secondary" />
 
-      <button class="save">Save</button>
+      <button class="save">Suggest</button>
     </div>
   </form>
 </template>
@@ -102,5 +102,8 @@ export default {
 }
 .save {
   width: 400px;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--clr-purple-01);
 }
 </style>

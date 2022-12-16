@@ -1,10 +1,11 @@
 <template>
+<div class="child">
   <form>
     <input
       type="text"
       name=""
       id="search-input"
-      placeholder="tipe in your search-keyword"
+      placeholder="type in your search-keyword"
       class="search-bar"
     />
     <button class="backg">
@@ -22,6 +23,7 @@
       </svg>
     </button>
   </form>
+  </div>
 </template>
 
 <script>
@@ -31,36 +33,44 @@ export default {
 </script>
 
 <style scoped>
-form {
+.child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+_form {
   max-width: 400px;
   position: relative;
 }
 
 .search-bar {
   font-size: 1rem;
-  width: 70%;
+  width: 120%;
   border-radius: 2rem;
   border: 2px solid var(--clr-purple-02);
   padding: 0.5rem 0.75rem;
   position: relative;
-  left: 10px;
+  left: -23px;
+
+}
+.search-bar:active {
+  border-color: 2px solid var(--clr-purple-02);
 }
 
 .backg {
   background-color: var(--clr-purple-01);
   position: relative;
   border-radius: 2rem;
-  right: 39px;
-  width: 12%;
+  left: 219px;
+  width: 47px;
   height: 37px;
-  top: -6px;
+  top: -37px;
   border: none;
   cursor: pointer;
 }
 .backg:hover {
   color: black;
 }
-
 .search-icon {
   position: absolute;
   right: 15px;

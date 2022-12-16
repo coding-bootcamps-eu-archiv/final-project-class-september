@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <div class="head">
-      <header>
-        <h1 class="clr-white-02">ATTENDEE FEED</h1>
-        <h2 class="clr-white-02">Coding Bootcamps Europe</h2>
-        <img
-          class="CBE"
-          src="https://image.jimcdn.com/app/cms/image/transf/dimension=230x10000:format=png/path/s0bc1816f4b388266/image/i2c7016bab2e2fa88/version/1647271231/image.png"
-          alt=""
-        />
-      </header>
-    </div>
+  <div class="sticky">
+    <header class="head">
+      <h1 class="clr-white-02">ATTENDEE FEED</h1>
+      <img
+        class="CBE"
+        src="https://image.jimcdn.com/app/cms/image/transf/dimension=230x10000:format=png/path/s0bc1816f4b388266/image/i2c7016bab2e2fa88/version/1647271231/image.png"
+        alt=""
+      />
+    </header>
     <div class="arrow"></div>
     <div class="arrow arrow-sdw"></div>
   </div>
@@ -23,25 +20,29 @@ export default {
 </script>
 
 <style scoped>
-/***general***/
+.sticky {
+  top: 0;
+  position: sticky;
+  z-index: 1;
+}
 .CBE {
-  width: 60px;
-  border-radius: 50%;
-  margin-top: 10px;
+  width: 25px;
+  border-radius: 45%;
 }
 
 .head {
   background-color: var(--clr-purple-01);
-
-  padding-block: 1rem;
-
+  padding-block: 0.5rem;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   text-align: center;
+  align-items: baseline;
+  gap: 20px;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 25px;
   font-weight: 400;
 }
 
@@ -53,21 +54,21 @@ h2 {
 /***specific***/
 .arrow {
   position: relative;
-  height: 30px;
+  height: 15px;
   background-color: var(--clr-purple-01);
   clip-path: polygon(0 0, 100% 0, 100% 0, 50% 100%, 0 0);
 }
 
 .arrow-sdw {
   background-color: var(--clr-purple-01);
-  height: 70px;
+  height: 35px;
   position: absolute;
-  top: 150px;
+  top: 50px;
   left: 0;
   right: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 40%, 50% 80%, 0 40%);
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 50% 80%, 0 35%);
   opacity: 0.7;
-  z-index: 9;
+  z-index: -9;
 }
 /***utilities***/
 
