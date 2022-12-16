@@ -4,7 +4,10 @@
       <a :href="url" class="link-style"> {{ title }}</a>
     </td>
 
-    <td>{{ type }}</td>
+    <td>
+      {{ type }} <br />
+      <p class="url-styling">{{ url }}</p>
+    </td>
     <td class="options-style">
       <DeleteButton @delete="triggerDelete" />
       <EditButton @edit="triggerEdit" :id="id" />
@@ -62,7 +65,9 @@ export default {
   display: flex;
   justify-content: space-evenly;
 }
-
+.url-styling {
+  color: rgb(183, 183, 183);
+}
 td {
   padding: 20px;
 }

@@ -9,6 +9,7 @@
     <SearchButton />
   </div>
   <router-view></router-view>
+
   <div class="create-wrapper">
     <router-link to="/public/suggestion">
       <button class="create">+ add suggestions</button>
@@ -21,10 +22,11 @@
           <tr v-for="entry of entries" :key="entry.id">
             <td>
               <div class="title">
-                Queen
                 <h2>
                   <a :href="entry.url" class="story-link">{{ entry.title }}</a>
                 </h2>
+                <linkIcon />
+                <p class="type-styling">{{ entry.type }}</p>
               </div>
             </td>
           </tr>
@@ -134,6 +136,7 @@
 import SearchInput from "@/components/SearchInput.vue";
 import SearchButton from "@/components/SearchButton.vue";
 import getEntriesMixin from "@/mixins/getEntries";
+import linkIcon from "@/components/linkIcon.vue";
 export default {
   data() {
     return {
@@ -144,6 +147,7 @@ export default {
   components: {
     SearchInput,
     SearchButton,
+    linkIcon,
   },
   mixins: [getEntriesMixin],
 };
@@ -272,6 +276,10 @@ nav {
   margin-right: 20px;
 }
 
+.type-styling {
+  color: grey;
+  margin-left: 50px;
+}
 .public-heading {
   margin-top: 60px;
   text-align: center;
@@ -289,8 +297,9 @@ footer {
   word-spacing: 27px;
 }
 
-_.title {
-  margin-left: 30px;
+.title {
+  _margin-left: 30px;
+  position: relative;
 }
 .icons {
   display: flex;

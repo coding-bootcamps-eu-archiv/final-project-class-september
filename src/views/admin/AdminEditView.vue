@@ -131,7 +131,7 @@ export default {
   async created() {
     const id = this.$route.params.id;
     const response = await fetch(
-      "https://attendee-feed-app-api.jgreg.uber.space/entries" + id
+      "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id
     );
     const jsonData = await response.json();
     this.title = jsonData.title;
