@@ -25,7 +25,7 @@
                 <h2>
                   <a :href="entry.url" class="story-link">{{ entry.title }}</a>
                 </h2>
-                <linkIcon />
+                <BiFileCodeIcon />
                 <p class="type-styling">{{ entry.type }}</p>
               </div>
             </td>
@@ -136,7 +136,7 @@
 import SearchInput from "@/components/SearchInput.vue";
 import SearchButton from "@/components/SearchButton.vue";
 import getEntriesMixin from "@/mixins/getEntries";
-import linkIcon from "@/components/linkIcon.vue";
+import BiFileCodeIcon from "@/components/BiFileCodeIcon";
 export default {
   data() {
     return {
@@ -147,7 +147,7 @@ export default {
   components: {
     SearchInput,
     SearchButton,
-    linkIcon,
+    BiFileCodeIcon,
   },
   mixins: [getEntriesMixin],
 };
