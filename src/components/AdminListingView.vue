@@ -1,6 +1,7 @@
 <template>
   <main class="style">
     <section class="table-item">
+      <div v-text="'Open Suggestions: ' + suggestionsCounter"></div>
       <div class="around">
         <table class="table-item__table">
           <thead>
@@ -82,10 +83,21 @@ export default {
     AdminListingViewRow,
   },
   mixins: [getEntriesMixin],
-
+  computed: {
+    suggestionsCounter() {
+      const filteredEntries = this.entries.filter(
+        (entry) => entry.isSuggestion === true
+      );
+      console.log(filteredEntries);
+      return filteredEntries.length;
+    },
+  },
   methods: {
+    countSuggestions() {
+      return "hello";
+    },
     isActive(entry) {
-      if (entry.active === false) {
+      if (entry.active === false || entry.isSuggestion === true) {
         return "highlight-non-active";
       } else "";
     },
