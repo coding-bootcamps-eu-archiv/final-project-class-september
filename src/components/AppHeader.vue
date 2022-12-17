@@ -1,7 +1,9 @@
 <template>
   <div class="sticky">
     <header class="head">
-      <h1 class="clr-white-02">ATTENDEE FEED</h1>
+      <h1 class="clr-white-02">
+        <router-link to="/" class="link-style">ATTENDEE FEED</router-link>
+      </h1>
       <img
         class="CBE"
         src="https://image.jimcdn.com/app/cms/image/transf/dimension=230x10000:format=png/path/s0bc1816f4b388266/image/i2c7016bab2e2fa88/version/1647271231/image.png"
@@ -74,5 +76,11 @@ h2 {
 
 .clr-white-02 {
   color: var(--clr-white-02);
+}
+
+.link-style {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.8rem;
 }
 </style>

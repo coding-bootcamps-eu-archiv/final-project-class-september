@@ -2,7 +2,10 @@
   <tr>
     <td>
       <a :href="url" class="link-style"> {{ title }}</a>
-      <p class="suggest-style" v-if="isSuggestion">Suggestion, please review</p>
+      <p class="status-style" v-if="isSuggestion">Suggestion, please review</p>
+      <p class="status-style" v-else-if="isActive === false">
+        Entry is not released
+      </p>
     </td>
 
     <td>
@@ -79,7 +82,7 @@ td {
   color: black;
 }
 
-.suggest-style {
+.status-style {
   font-size: 12px;
   color: grey;
 }
