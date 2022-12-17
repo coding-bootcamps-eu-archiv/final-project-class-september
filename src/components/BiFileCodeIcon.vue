@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "link-icon",
+  name: "BiFileCodeIcon",
 };
 </script>
 

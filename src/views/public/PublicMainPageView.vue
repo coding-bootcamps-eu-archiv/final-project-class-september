@@ -5,7 +5,7 @@
 
   <h1 class="public-heading">Public-Main-Page</h1>
   <div class="search-bar">
-    <SearchInput />
+    <SearchInput @searchEntries="searchForEntries" @searchWord="searchedWord" />
     <SearchButton />
   </div>
   <router-view></router-view>
@@ -140,6 +140,7 @@ import BiFileCodeIcon from "@/components/BiFileCodeIcon";
 export default {
   data() {
     return {
+      typedWord: "",
       urlParams: "?active_ne=false",
     };
   },
@@ -150,6 +151,24 @@ export default {
     BiFileCodeIcon,
   },
   mixins: [getEntriesMixin],
+
+  methods: {
+    searchForEntries() {
+      const filteredEntries = this.entries.filter(
+        (entry) =>
+          entry.title.includes(this.typedWord) ||
+          entry.type.includes(this.typedWord)
+      );
+
+      this.entries = filteredEntries;
+      if (this.typedWord === "") {
+        location.href = "/";
+      }
+    },
+    searchedWord(event) {
+      this.typedWord = event.target.value;
+    },
+  },
 };
 </script>
 

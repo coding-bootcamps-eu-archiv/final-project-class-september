@@ -64,9 +64,6 @@
               @delete="triggerDelete(index)"
               @edit="triggerEdit(index)"
               @release="triggerRelease(index)"
-              :class="{
-                'cbe-announcement-true': entry.isCbeAnnnouncement === true,
-              }"
             />
           </tbody>
         </table>
