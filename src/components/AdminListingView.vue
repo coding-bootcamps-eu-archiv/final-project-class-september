@@ -86,7 +86,7 @@ export default {
   methods: {
     isActive(entry) {
       if (entry.active === false) {
-        return "highlight-active";
+        return "highlight-non-active";
       } else "";
     },
 
@@ -215,7 +215,7 @@ main {
   border-radius: 15px;
 }
 
-.highlight-active {
+.highlight-non-active {
   background-color: rgb(253, 231, 231);
 }
 </style>
