@@ -2,6 +2,7 @@
   <tr>
     <td>
       <a :href="url" class="link-style"> {{ title }}</a>
+      <p class="suggest-style" v-if="isSuggestion">Suggestion, please review</p>
     </td>
 
     <td>
@@ -33,6 +34,8 @@ export default {
     isCbeAnnouncement: Boolean,
     id: String,
     url: String,
+    isSuggestion: Boolean,
+    isActive: Boolean,
   },
   components: {
     DeleteButton,
@@ -74,5 +77,10 @@ td {
 .link-style {
   text-decoration: none;
   color: black;
+}
+
+.suggest-style {
+  font-size: 12px;
+  color: grey;
 }
 </style>
