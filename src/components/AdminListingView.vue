@@ -60,6 +60,7 @@
               :id="entry.id"
               :url="entry.url"
               :title="entry.title"
+              :class="isActive(entry)"
               :type="entry.type"
               @delete="triggerDelete(index)"
               @edit="triggerEdit(index)"
@@ -83,6 +84,12 @@ export default {
   mixins: [getEntriesMixin],
 
   methods: {
+    isActive(entry) {
+      if (entry.active === false) {
+        return "highlight-active";
+      } else "";
+    },
+
     async triggerDelete(index) {
       const id = this.entries[index].id;
       await fetch(
@@ -206,5 +213,9 @@ main {
   width: 30px;
   height: 30px;
   border-radius: 15px;
+}
+
+.highlight-active {
+  background-color: rgb(253, 231, 231);
 }
 </style>

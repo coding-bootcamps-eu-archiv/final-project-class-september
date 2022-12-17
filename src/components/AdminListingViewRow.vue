@@ -31,7 +31,6 @@ export default {
     title: String,
     type: String,
     isCbeAnnouncement: Boolean,
-    class: Boolean,
     id: String,
     url: String,
   },
