@@ -24,9 +24,5 @@ export default {
 .icon-style {
   width: 45px;
   height: 28px;
-  position: absolute;
-  top: 10%;
-  left: 0px;
-  color: grey;
 }
 </style>

@@ -19,13 +19,18 @@
     <section>
       <div class="around">
         <table class="table-item">
-          <tr v-for="entry of entries" :key="entry.id">
+          <tr
+            v-for="entry of entries"
+            :key="entry.id"
+            :class="announcementStyle(entry)"
+          >
+            <td><BiFileCodeIcon /></td>
             <td>
               <div class="title">
                 <h2>
                   <a :href="entry.url" class="story-link">{{ entry.title }}</a>
                 </h2>
-                <BiFileCodeIcon />
+
                 <p class="type-styling">{{ entry.type }}</p>
               </div>
             </td>
@@ -151,8 +156,14 @@ export default {
     BiFileCodeIcon,
   },
   mixins: [getEntriesMixin],
-
+  computed: {},
   methods: {
+    announcementStyle(entry) {
+      if (entry.isCbeAnnouncement) {
+        return "highlight-entry";
+      }
+      return "";
+    },
     searchForEntries() {
       const filteredEntries = this.entries.filter(
         (entry) =>
@@ -329,5 +340,10 @@ footer {
 }
 .footer-wrapper {
   margin-top: 100px;
+}
+
+/* Styling for official cbe announcement posts */
+.highlight-entry {
+  border: 6px solid purple;
 }
 </style>
