@@ -1,7 +1,13 @@
 <template>
   <tr>
-    <td :class="classForCbeAnnouncement">{{ title }}</td>
-    <td>{{ type }}</td>
+    <td>
+      <a :href="url" class="link-style"> {{ title }}</a>
+    </td>
+
+    <td>
+      {{ type }} <br />
+      <p class="url-styling">{{ url }}</p>
+    </td>
     <td class="options-style">
       <DeleteButton @delete="triggerDelete" />
       <EditButton @edit="triggerEdit" :id="id" />
@@ -27,6 +33,7 @@ export default {
     isCbeAnnouncement: Boolean,
     class: Boolean,
     id: String,
+    url: String,
   },
   components: {
     DeleteButton,
@@ -58,8 +65,15 @@ export default {
   display: flex;
   justify-content: space-evenly;
 }
-
+.url-styling {
+  color: rgb(183, 183, 183);
+}
 td {
   padding: 20px;
+}
+
+.link-style {
+  text-decoration: none;
+  color: black;
 }
 </style>

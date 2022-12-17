@@ -14,9 +14,9 @@
       <SearchButton />
     </div>
     <div class="create-wrapper">
-      <a href="http://localhost:8080/admin/create">
+      <router-link to="/admin/create">
         <button class="create">+ create</button>
-      </a>
+      </router-link>
     </div>
     <AdminListingView />
   </main>

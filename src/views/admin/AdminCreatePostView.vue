@@ -116,7 +116,7 @@ export default {
         isCbeAnnouncement: this.isCbeAnnouncement,
       };
 
-      await fetch("https://attendee-feed-app-api.jgreg.uber.space/entries/", {
+      await fetch("https://attendee-feed-app-api.jgreg.uber.space/entries", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

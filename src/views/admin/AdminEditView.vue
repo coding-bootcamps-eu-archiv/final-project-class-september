@@ -118,7 +118,7 @@ export default {
         }
       );
 
-      location.href = "/";
+      location.href = "/admin";
     },
     changeAnnouncementStatus(event) {
       this.isCbeAnnouncement = event.target.checked;

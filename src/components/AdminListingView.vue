@@ -58,14 +58,12 @@
               v-for="(entry, index) in entries"
               :key="entry.id"
               :id="entry.id"
+              :url="entry.url"
               :title="entry.title"
               :type="entry.type"
               @delete="triggerDelete(index)"
               @edit="triggerEdit(index)"
               @release="triggerRelease(index)"
-              :class="{
-                'cbe-announcement-true': entry.isCbeAnnnouncement === true,
-              }"
             />
           </tbody>
         </table>
@@ -76,59 +74,52 @@
 
 <script>
 import AdminListingViewRow from "@/components/AdminListingViewRow.vue";
+import getEntriesMixin from "@/mixins/getEntries";
 
 export default {
   components: {
     AdminListingViewRow,
   },
-  data() {
-    return {
-      entries: [
-        {
-          title: "Test Event",
-          type: "event",
-          url: "https//foo.bar",
-          active: false,
-          isCbeAnnouncement: true,
-          id: "c76668d0-ce3a-48a7-acd5-0f54ad6818e1",
-        },
-      ],
-    };
-  },
-  async created() {
-    try {
-      const response = await fetch(
-        "https://attendee-feed-app-api.jgreg.uber.space/entries/"
-      );
-      console.log(response);
-      console.log(process.env.VUE_APP_API_URL);
+  mixins: [getEntriesMixin],
 
+  methods: {
+    async triggerDelete(index) {
+      const id = this.entries[index].id;
+      await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const response = await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries"
+      );
       const data = await response.json();
 
       this.entries = data;
-      console.log(this.entries);
-    } catch (error) {
-      console.error(error);
-    }
-  },
-  methods: {
-    triggerDelete(index) {
-      console.log(
-        "i am the Delete event, triggered in the highest component: AdminListingView"
-      );
-      console.log(this.entries[index]);
     },
     triggerEdit(index) {
-      console.log(
-        "i am the Edit event, triggered in the highest component: AdminListingView"
-      );
       console.log(this.entries[index]);
     },
-    triggerRelease(index) {
-      console.log(
-        "i am the Release event, triggered in the highest component: AdminListingView"
+    async triggerRelease(index) {
+      const currentEntry = this.entries[index];
+      const id = this.entries[index].id;
+      this.entries[index].active = true;
+
+      await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(currentEntry),
+        }
       );
-      console.log(this.entries[index]);
     },
   },
 };
