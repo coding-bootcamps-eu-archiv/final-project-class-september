@@ -2,6 +2,10 @@
   <tr>
     <td>
       <a :href="url" class="link-style"> {{ title }}</a>
+      <p class="status-style" v-if="isSuggestion">Suggestion, please review</p>
+      <p class="status-style" v-else-if="isActive === false">
+        Entry is not released
+      </p>
     </td>
 
     <td>
@@ -31,9 +35,10 @@ export default {
     title: String,
     type: String,
     isCbeAnnouncement: Boolean,
-    class: Boolean,
     id: String,
     url: String,
+    isSuggestion: Boolean,
+    isActive: Boolean,
   },
   components: {
     DeleteButton,
@@ -75,5 +80,10 @@ td {
 .link-style {
   text-decoration: none;
   color: black;
+}
+
+.status-style {
+  font-size: 12px;
+  color: grey;
 }
 </style>

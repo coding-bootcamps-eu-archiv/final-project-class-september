@@ -71,6 +71,10 @@
         </section>
       </div>
       <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Save</button>
+      <div v-if="submitted" class="thank-you-message">
+        Thank you for submitting, you are a great Admin! You will be redirected
+        in 5s
+      </div>
     </div>
   </form>
 </template>
@@ -88,6 +92,7 @@ export default {
       url: "",
       active: "",
       isCbeAnnouncement: "",
+      submitted: false,
     };
   },
   methods: {
@@ -108,6 +113,12 @@ export default {
       this.url = event.target.value;
     },
     async saveEntry() {
+      this.submitted = true;
+      setTimeout(() => {
+        this.submitted = false;
+        this.$router.push("./");
+      }, 5000);
+
       const newEntry = {
         title: this.title,
         type: this.type,
@@ -123,7 +134,7 @@ export default {
         },
         body: JSON.stringify(newEntry),
       });
-      location.href = "/admin";
+      //location.href = "/admin";
     },
   },
 };
@@ -285,5 +296,9 @@ button:hover {
 .flex-r-c {
   display: flex;
   gap: 7px;
+}
+
+.thank-you-message {
+  font-size: 25px;
 }
 </style>

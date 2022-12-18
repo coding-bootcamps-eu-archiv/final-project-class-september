@@ -1,6 +1,7 @@
 <template>
   <main class="style">
     <section class="table-item">
+      <div v-text="'Open Suggestions: ' + suggestionsCounter"></div>
       <div class="around">
         <table class="table-item__table">
           <thead>
@@ -56,10 +57,16 @@
           <tbody>
             <AdminListingViewRow
               v-for="(entry, index) in entries"
+              :isSuggestion="entry.isSuggestion"
+              :isActive="entry.active"
               :key="entry.id"
               :id="entry.id"
               :url="entry.url"
               :title="entry.title"
+              :class="{
+                active: isActive(entry),
+                suggestion: isSuggestion(entry),
+              }"
               :type="entry.type"
               @delete="triggerDelete(index)"
               @edit="triggerEdit(index)"
@@ -81,8 +88,26 @@ export default {
     AdminListingViewRow,
   },
   mixins: [getEntriesMixin],
-
+  computed: {
+    suggestionsCounter() {
+      const filteredEntries = this.entries.filter(
+        (entry) => entry.isSuggestion === true
+      );
+      console.log(filteredEntries);
+      return filteredEntries.length;
+    },
+  },
   methods: {
+    isActive(entry) {
+      if (entry.active === false) {
+        return "active";
+      } else "";
+    },
+    isSuggestion(entry) {
+      if (entry.isSuggestion === true) {
+        return "suggestion";
+      } else "";
+    },
     async triggerDelete(index) {
       const id = this.entries[index].id;
       await fetch(
@@ -109,6 +134,7 @@ export default {
       const currentEntry = this.entries[index];
       const id = this.entries[index].id;
       this.entries[index].active = true;
+      this.entries[index].isSuggestion = false;
 
       await fetch(
         "https://attendee-feed-app-api.jgreg.uber.space/entries/" + id,
@@ -206,5 +232,12 @@ main {
   width: 30px;
   height: 30px;
   border-radius: 15px;
+}
+
+.active {
+  background-color: rgb(240, 240, 240);
+}
+.suggestion {
+  background-color: rgb(224, 224, 224);
 }
 </style>

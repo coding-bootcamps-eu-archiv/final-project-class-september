@@ -46,6 +46,9 @@
         </section>
       </div>
       <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Suggest</button>
+      <div v-if="submitted" class="thank-you-message">
+        Thank you for your Suggestion! You will be redirected in 5s
+      </div>
     </div>
   </form>
 </template>
@@ -64,6 +67,7 @@ export default {
       active: false,
       isCbeAnnouncement: false,
       isSuggestion: true,
+      submitted: false,
     };
   },
   methods: {
@@ -84,6 +88,11 @@ export default {
       this.url = event.target.value;
     },
     async saveEntry() {
+      this.submitted = true;
+      setTimeout(() => {
+        this.submitted = false;
+        this.$router.push("./");
+      }, 5000);
       const newEntry = {
         title: this.title,
         type: this.type,
@@ -100,7 +109,7 @@ export default {
         },
         body: JSON.stringify(newEntry),
       });
-      location.href = "/";
+      //location.href = "/";
     },
   },
 };
