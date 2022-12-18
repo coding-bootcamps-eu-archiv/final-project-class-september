@@ -1,10 +1,10 @@
 <template>
   <AppHeader />
 
-  <main>
+  <main class="around">
     <router-view />
 
-    <div id="app"></div>
+    <div id="app" class="around"></div>
   </main>
 </template>
 
@@ -21,6 +21,13 @@ export default {
 
 <style>
 /***** general stylings *****/
+
+@media only screen and (min-width: 1140px) {
+  .around {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
 
 * {
   box-sizing: border-box;

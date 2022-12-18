@@ -1,5 +1,5 @@
 <template>
-  <main class="style">
+  <main class="style around">
     <section class="table-item">
       <div v-text="'Open Suggestions: ' + suggestionsCounter"></div>
       <div class="around">
