@@ -98,12 +98,9 @@ export default {
     },
   },
   methods: {
-    countSuggestions() {
-      return "hello";
-    },
     isActive(entry) {
       if (entry.active === false) {
-        return "highlight-non-active";
+        return "active";
       } else "";
     },
     isSuggestion(entry) {
@@ -238,9 +235,9 @@ main {
 }
 
 .active {
-  background-color: rgb(253, 231, 231);
+  background-color: rgb(240, 240, 240);
 }
 .suggestion {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(224, 224, 224);
 }
 </style>
