@@ -28,7 +28,9 @@
             <td>
               <div class="title">
                 <h2>
-                  <a :href="entry.url" class="story-link">{{ entry.title }}</a>
+                  <a :href="entry.url" class="story-link" target="_blank">{{
+                    entry.title
+                  }}</a>
                 </h2>
 
                 <p class="type-styling">{{ entry.type }}</p>
