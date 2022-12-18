@@ -1,5 +1,5 @@
 <template>
-  <main class="">
+  <main class="around">
     <router-view></router-view>
   </main>
 </template>
@@ -13,7 +13,12 @@ export default {
 
 <style>
 /***** general stylings *****/
-
+@media only screen and (min-width: 1140px) {
+  .around {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;

@@ -1,6 +1,7 @@
 <template>
+<div class="titel-admin-create">
   <h1 class="mrg-bl-50-25">Create your admin-post</h1>
-
+</div>
   <form v-on:submit.prevent="saveEntry">
     <div class="flex-c-c-g30">
       <div class="felx-c-g10">
@@ -141,6 +142,10 @@ export default {
 </script>
 
 <style scoped>
+.titel-admin-create {
+  padding-top: 50px;
+}
+
 h1 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -154,7 +159,6 @@ button {
   color: var(--clr-white-02);
   background-color: var(--clr-purple-02);
   box-shadow: var(--clr-purple-01) 2.5px 4px;
-  _margin-bottom: 1rem;
 }
 
 button:hover {

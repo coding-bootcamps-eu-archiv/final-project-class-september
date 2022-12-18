@@ -1,6 +1,7 @@
 <template>
+<div class="titel-user-create around">
   <h1 class="mrg-bl-50-25">Suggest your post</h1>
-
+</div>
   <form v-on:submit.prevent="saveEntry">
     <div class="flex-c-c-g30">
       <div class="felx-c-g10">
@@ -116,6 +117,16 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 1140px) {
+  .around {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+.titel-user-create {
+  padding-top: 70px;
+}
 h1 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -129,7 +140,6 @@ button {
   color: var(--clr-white-02);
   background-color: var(--clr-purple-02);
   box-shadow: var(--clr-purple-01) 2.5px 4px;
-  _margin-bottom: 1rem;
 }
 
 button:hover {

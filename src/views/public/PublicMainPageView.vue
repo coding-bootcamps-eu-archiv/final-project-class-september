@@ -187,9 +187,6 @@ export default {
 h2 {
   margin-left: 50px;
 }
-h2:hover {
-  color: orange;
-}
 @media only screen and (min-width: 1140px) {
   .around {
     width: 960px;
@@ -225,46 +222,6 @@ tr {
 tr:hover {
   -webkit-box-shadow: 0px 0px 25px 0px rgba(189, 110, 238, 0.674);
   box-shadow: 0px 0px 25px 0px rgba(189, 110, 238, 0.674);
-}
-
-table-item {
-  border-collapse: collapse;
-  margin: 25px 0;
-  border: none;
-}
-
-.bi-youtube {
-  width: 35px;
-  height: 35px;
-}
-.bi-instagram {
-  background: linear-gradient(
-    90deg,
-    rgba(236, 0, 0, 1) 5%,
-    rgba(236, 223, 0, 1) 12%,
-    rgba(214, 235, 16, 1) 19%,
-    rgba(199, 227, 106, 1) 26%,
-    rgba(115, 227, 106, 1) 35%,
-    rgba(106, 227, 164, 1) 42%,
-    rgba(106, 227, 204, 1) 49%,
-    rgba(106, 227, 208, 1) 55%,
-    rgba(106, 187, 227, 1) 62%,
-    rgba(106, 132, 227, 1) 68%,
-    rgba(129, 106, 227, 1) 73%,
-    rgba(184, 106, 227, 1) 79%,
-    rgba(227, 106, 209, 1) 85%,
-    rgba(227, 106, 158, 1) 91%,
-    rgba(227, 106, 115, 1) 98%
-  );
-  border: 1px solid white;
-  border-radius: 12px;
-  width: 35px;
-  height: 35px;
-}
-.CBE {
-  width: 36px;
-  height: 35px;
-  border-radius: 15px;
 }
 /* suggestion button */
 .create-wrapper {
@@ -328,7 +285,6 @@ footer {
 }
 
 .title {
-  _margin-left: 30px;
   position: relative;
 }
 .icons {
@@ -344,6 +300,49 @@ footer {
 
 /* Styling for official cbe announcement posts */
 .highlight-entry {
-  border: 6px solid purple;
+  _border: 4px solid purple;
+  transition: 0.3s;
 }
+/*
+.highlight-entry:hover {
+  background: linear-gradient(
+    90deg,
+    #fafaf6,
+    #fafaf6,
+    #e39af5,
+    #f275e3,
+    #cb49ff,
+    #f275e3,
+    #e39af5,
+    #fafaf6,
+    #fafaf6
+  );
+  background-size: 400%;
+  box-shadow: 0 0 15px rgb(160, 107, 239);
+  animation: glow 10s linear forwards;
+}
+@keyframes glow {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 400%;
+  }
+}
+.highlight-entry::before {
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  background: inherit;
+  filter: blur(36px);
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.highlight-entry:hover::before {
+  z-index: -1;
+  opacity: 0;
+}
+*/
 </style>

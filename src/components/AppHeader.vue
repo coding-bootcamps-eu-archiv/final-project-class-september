@@ -65,7 +65,7 @@ h2 {
   background-color: var(--clr-purple-01);
   height: 35px;
   position: absolute;
-  top: 50px;
+  top: 55px;
   left: 0;
   right: 0;
   clip-path: polygon(0 0, 100% 0, 100% 35%, 50% 80%, 0 35%);
