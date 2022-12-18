@@ -93,7 +93,6 @@ export default {
       const filteredEntries = this.entries.filter(
         (entry) => entry.isSuggestion === true
       );
-      console.log(filteredEntries);
       return filteredEntries.length;
     },
   },
@@ -125,7 +124,7 @@ export default {
       );
       const data = await response.json();
 
-      this.entries = data;
+      this.entries = data.sort((a, b) => b.createdAt - a.createdAt);
     },
     triggerEdit(index) {
       console.log(this.entries[index]);

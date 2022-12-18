@@ -24,7 +24,41 @@
             :key="entry.id"
             :class="announcementStyle(entry)"
           >
-            <td><BiFileCodeIcon /></td>
+            <td
+              v-if="
+                entry.type === 'youtube' && entry.isCbeAnnouncement === false
+              "
+            >
+              <img :src="youtube" />
+            </td>
+            <td
+              v-else-if="
+                entry.isCbeAnnouncement === false && entry.type === 'instagram'
+              "
+            >
+              <img :src="instagram" />
+            </td>
+            <td v-else-if="entry.isCbeAnnouncement === true">
+              <img
+                class="CBE-icon"
+                src="https://image.jimcdn.com/app/cms/image/transf/dimension=33x33:format=png/path/s0bc1816f4b388266/image/i2c7016bab2e2fa88/version/1647271231/image.png"
+                alt=""
+              />
+            </td>
+            <td
+              v-else-if="
+                entry.isCbeAnnouncement === false && entry.type === 'article'
+              "
+            >
+              <img :src="article" />
+            </td>
+            <td
+              v-else-if="
+                entry.isCbeAnnouncement === false && entry.type === 'vacancy'
+              "
+            >
+              <img :src="lupe" />
+            </td>
             <td>
               <div class="title">
                 <h2>
@@ -133,6 +167,7 @@
               ></a>
             </div>
           </div>
+          <BiFileCodeIcon />
         </div>
       </footer>
     </div>
@@ -144,11 +179,19 @@ import SearchInput from "@/components/SearchInput.vue";
 import SearchButton from "@/components/SearchButton.vue";
 import getEntriesMixin from "@/mixins/getEntries";
 import BiFileCodeIcon from "@/components/BiFileCodeIcon";
+import instagram from "@/assets/instagram.svg";
+import lupe from "@/assets/lupe.svg";
+import article from "@/assets/article.svg";
+import youtube from "@/assets/youtube.svg";
 export default {
   data() {
     return {
       typedWord: "",
       urlParams: "?active_ne=false",
+      instagram,
+      lupe,
+      article,
+      youtube,
     };
   },
   name: "publicView",
@@ -345,6 +388,5 @@ footer {
 .highlight-entry:hover::before {
   z-index: -1;
   opacity: 0;
-}
-*/
+}*/
 </style>
