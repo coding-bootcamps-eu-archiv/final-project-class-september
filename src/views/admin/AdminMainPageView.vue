@@ -1,13 +1,5 @@
 <template>
   <main>
-    <div class="route-link">
-      <nav>
-        <router-link to="/">Switch to Public Main Page</router-link> <br />
-        <router-link to="/admin/create"
-          >Switch to Admin Create Post Page</router-link
-        >
-      </nav>
-    </div>
     <h1 class="admin-heading">Admin-Main-Page</h1>
     <div>
       <SearchInput />
@@ -146,6 +138,7 @@ export default {
   font-weight: bold;
   letter-spacing: 3px;
   cursor: pointer;
+  border: 2px solid var(--clr-white-02);
   border: 2px solid var(--clr-white-02);
 }
 .create:active {
