@@ -241,6 +241,16 @@ export default {
 .table-item__table tbody tr {
   border-bottom: 1px solid var(--clr-grey-01);
 }
+table-item__table-head-actions {
+  width: 15%;
+}
+table-item__table-row button {
+  opacity: 0;
+  padding: 5px;
+  transition: opacity 500ms;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
 main {
   display: flex;
