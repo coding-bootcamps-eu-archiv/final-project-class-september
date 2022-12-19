@@ -6,15 +6,18 @@
 
     <div id="app" class="around"></div>
   </main>
+  <GeneralFooter />
 </template>
 
 <script>
 import AppHeader from "@/components/AppHeader.vue";
+import GeneralFooter from "@/components/GeneralFooter.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
+    GeneralFooter,
   },
 };
 </script>
@@ -48,16 +51,19 @@ template {
 :root {
   --clr-purple-01: hsl(268, 75%, 44%);
   --clr-purple-02: hsl(268, 58%, 55%);
+  --clr-purple-03: hsl(268, 100%, 71%);
+  --clr-gray-01: hsl(0, 0%, 50%);
+  --clr-grey-01: hsl(0, 0%, 87%);
   --clr-white-02: hsl(0, 0%, 98%);
   --clr-grey: hsla(0, 0%, 0%, 0.6);
-  --clr-black: hsl(0, 0%, 0%);
+  --clr-black-01: hsl(0, 0%, 0%);
   --clr-magenta-01: hotpink; /*delete*/
-  --clr-meganta-02: salmon; /*release?*/
+  --clr-meganta-02: salmon; /*release*/
+  --clr-red-01: hsl(0, 100%, 50%);
   --clr-blue-01: dodgerblue; /*edit*/
-  --clr-green-01: rgb(63, 174, 63); /*create*/
-  --clr-black-01: black;
-  --clr-gray-01: gray;
-  --clr-grey-01: #dddddd;
+  --clr-blue-02: hsl(203, 89%, 53%);
+  --clr-blue-03: hsl(210, 90, 40%);
+  --clr-green-01: hsl(120, 47%, 46%); /*create*/
 }
 
 /******** utilities *******/
@@ -70,7 +76,7 @@ template {
 }
 
 .clr-black {
-  color: var(--clr-black);
+  color: var(--clr-black-01);
 }
 
 .clr-purple-01 {
