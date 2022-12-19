@@ -76,7 +76,7 @@ export default {
   gap: 8px;
 }
 .url-styling {
-  color: var(--clr-gray-01);
+  color: var(--clr-black-01);
 }
 
 td {
@@ -90,7 +90,7 @@ td {
 
 .status-style {
   font-size: 12px;
-  color: var(--clr-gray-01);
+  color: var(--clr-black-01);
 }
 
 /** fonts **/

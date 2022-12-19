@@ -310,6 +310,31 @@ button:hover {
 }
 
 .thank-you-message {
-  font-size: 25px;
+  font-size: 20px;
+  font-style: italic;
+}
+.thank-you-message {
+  background: linear-gradient(
+    90deg,
+    #fafaf6,
+    #fafaf6,
+    #a6f3b7,
+    #75f2ad,
+    #49ff4f,
+    #75f2ad,
+    #a6f3b7,
+    #fafaf6,
+    #fafaf6
+  );
+  background-size: 400%;
+  animation: glow 10s linear forwards;
+}
+@keyframes glow {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 400%;
+  }
 }
 </style>
