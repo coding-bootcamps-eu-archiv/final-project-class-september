@@ -210,7 +210,6 @@ export default {
     BiFileCodeIcon,
   },
   mixins: [getEntriesMixin],
-  computed: {},
   methods: {
     announcementStyle(entry) {
       if (entry.isCbeAnnouncement) {

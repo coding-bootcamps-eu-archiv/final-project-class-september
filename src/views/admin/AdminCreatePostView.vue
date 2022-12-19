@@ -1,7 +1,7 @@
 <template>
-<div class="titel-admin-create">
-  <h1 class="mrg-bl-50-25">Create your admin-post</h1>
-</div>
+  <div class="titel-admin-create">
+    <h1 class="mrg-bl-50-25">Create your admin-post</h1>
+  </div>
   <form v-on:submit.prevent="saveEntry">
     <div class="flex-c-c-g30">
       <div class="felx-c-g10">
@@ -135,7 +135,6 @@ export default {
         },
         body: JSON.stringify(newEntry),
       });
-      //location.href = "/admin";
     },
   },
 };

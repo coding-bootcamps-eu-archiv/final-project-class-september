@@ -33,7 +33,6 @@ export default {
 
   methods: {
     searchEntries() {
-      console.log("hey");
       this.$emit("searchEntries");
     },
     searchWord(event) {
