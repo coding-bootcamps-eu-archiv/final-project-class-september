@@ -256,11 +256,12 @@ h2 {
   .around {
     width: 960px;
     margin: 0 auto;
+    
   }
 }
 .story-link {
   text-decoration: none;
-  font-size: 35px;
+  font-size: 25px;
   color: var(--clr-black-01);
   font-weight: 100;
   font-family: Arial, Helvetica, sans-serif;

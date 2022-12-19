@@ -32,7 +32,7 @@ export default {
 * {
   box-sizing: border-box;
   margin: 0;
-  font-size: 16px;
+  _font-size: 16px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
