@@ -40,8 +40,8 @@
             </td>
             <td v-else-if="entry.isCbeAnnouncement === true">
               <img
-                class="CBE-icon"
-                src="https://image.jimcdn.com/app/cms/image/transf/dimension=33x33:format=png/path/s0bc1816f4b388266/image/i2c7016bab2e2fa88/version/1647271231/image.png"
+                class="CBE"
+                src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/1327/original/Coding_Bootcamps_Europe_logo.png"
                 alt=""
               />
             </td>
@@ -229,6 +229,14 @@ export default {
 </script>
 
 <style scoped>
+img {
+  margin-left: 25px;
+}
+.CBE {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 h2 {
   margin-left: 50px;
 }
@@ -246,7 +254,7 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 .story-link:hover {
-  color: var(--clr-purple-01);
+  color: var(2);
 }
 .around {
   padding-top: 20px;
