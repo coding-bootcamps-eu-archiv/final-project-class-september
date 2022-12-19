@@ -1,57 +1,59 @@
 <template>
-  <div class="titel-user-create around">
-    <h1 class="mrg-bl-50-25">Suggest your post</h1>
-  </div>
-  <form v-on:submit.prevent="saveEntry">
-    <div class="flex-c-c-g30">
-      <div class="felx-c-g10">
-        <section class="flex-c-s">
-          <label for="title" class="fnt-wgt-600">Title</label>
-          <GeneralInputField
-            id="title"
-            @input="updateTitle"
-            class="width-400 pdg-05 bdr-02-s-p bdr-r-025"
-          />
-        </section>
-
-        <section class="flex-c-s">
-          <div class="wrapper">
-            <label for="dropdown" class="fnt-wgt-600">Select type</label>
-            <select
-              id="dropdown"
-              class="dropDown pdg-05 bdr-02-s-p bdr-r-025 clr-purple-02"
-              v-model="type"
-            >
-              <option value="instagram">instagram</option>
-              <option value="youtube">youtube</option>
-              <option value="event">event</option>
-              <option value="article">article</option>
-              <option value="vacancy">vacancy</option>
-            </select>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="white"
-              class="arrow-down pdg-t-05 pdg-il-025"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-              />
-            </svg>
-          </div>
-        </section>
-
-        <section class="flex-c-s">
-          <label for="url" class="fnt-wgt-600">URL</label>
-          <GeneralInputField id="url" @input="updateUrl" variant="primary" />
-        </section>
-      </div>
-      <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Suggest</button>
-      <div v-if="submitted" class="thank-you-message">
-        {{ counterMessage }}
-      </div>
+  <main>
+    <div class="titel-user-create around">
+      <h1 class="mrg-bl-50-25">Suggest your post</h1>
     </div>
-  </form>
+    <form v-on:submit.prevent="saveEntry">
+      <div class="flex-c-c-g30">
+        <div class="felx-c-g10">
+          <section class="flex-c-s">
+            <label for="title" class="fnt-wgt-600">Title</label>
+            <GeneralInputField
+              id="title"
+              @input="updateTitle"
+              class="width-400 pdg-05 bdr-02-s-p bdr-r-025"
+            />
+          </section>
+
+          <section class="flex-c-s">
+            <div class="wrapper">
+              <label for="dropdown" class="fnt-wgt-600">Select type</label>
+              <select
+                id="dropdown"
+                class="dropDown pdg-05 bdr-02-s-p bdr-r-025 clr-purple-02"
+                v-model="type"
+              >
+                <option value="instagram">instagram</option>
+                <option value="youtube">youtube</option>
+                <option value="event">event</option>
+                <option value="article">article</option>
+                <option value="vacancy">vacancy</option>
+              </select>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                class="arrow-down pdg-t-05 pdg-il-025"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                />
+              </svg>
+            </div>
+          </section>
+
+          <section class="flex-c-s">
+            <label for="url" class="fnt-wgt-600">URL</label>
+            <GeneralInputField id="url" @input="updateUrl" variant="primary" />
+          </section>
+        </div>
+        <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Suggest</button>
+        <div v-if="submitted" class="thank-you-message">
+          {{ counterMessage }}
+        </div>
+      </div>
+    </form>
+  </main>
 </template>
 
 <script>
@@ -126,6 +128,10 @@ export default {
 </script>
 
 <style scoped>
+main {
+  min-height: calc(100vh - 295px);
+}
+
 .thank-you-message {
   background: linear-gradient(
     90deg,
@@ -157,9 +163,6 @@ export default {
   }
 }
 
-.titel-user-create {
-  padding-top: 70px;
-}
 h1 {
   font-size: 1.5rem;
   font-weight: 600;

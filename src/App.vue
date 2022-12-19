@@ -6,7 +6,7 @@
 
     <div id="app" class="around"></div>
   </main>
-  <GeneralFooter />
+  <GeneralFooter class="footer-bottom" />
 </template>
 
 <script>
