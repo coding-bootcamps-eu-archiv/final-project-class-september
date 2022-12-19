@@ -1,16 +1,20 @@
 <template>
   <tr>
     <td>
-      <a :href="url" target="_blank" class="link-style"> {{ title }}</a>
-      <p class="status-style" v-if="isSuggestion">Suggestion, please review</p>
-      <p class="status-style" v-else-if="isActive === false">
+      <a :href="url" target="_blank" class="link-style font-w-600">
+        {{ title }}</a
+      >
+      <p class="status-style font-w-400" v-if="isSuggestion">
+        Suggestion, please review
+      </p>
+      <p class="status-style font-w-400" v-else-if="isActive === false">
         Entry is not released
       </p>
     </td>
 
     <td>
       {{ type }} <br />
-      <p class="url-styling">{{ url }}</p>
+      <p class="url-styling font-w-400">{{ url }}</p>
     </td>
     <td class="options-style">
       <DeleteButton @delete="triggerDelete" />
@@ -69,10 +73,12 @@ export default {
   text-align: center;
   display: flex;
   justify-content: space-evenly;
+  gap: 8px;
 }
 .url-styling {
   color: var(--clr-gray-01);
 }
+
 td {
   padding: 20px;
 }
@@ -85,5 +91,14 @@ td {
 .status-style {
   font-size: 12px;
   color: var(--clr-gray-01);
+}
+
+/** fonts **/
+.font-w-600 {
+  font-weight: 800;
+}
+
+.font-w-400 {
+  font-weight: 200;
 }
 </style>
