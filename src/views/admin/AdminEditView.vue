@@ -1,82 +1,84 @@
 <template>
-  <h1 class="mrg-bl-50-25">Edit admin post</h1>
+  <main>
+    <h1 class="mrg-bl-50-25">Edit admin post</h1>
 
-  <form v-on:submit.prevent="updateEntry">
-    <div class="flex-c-c-g30">
-      <div class="felx-c-g10">
-        <section class="checkbox-wrapper">
-          <div class="flex-r-c">
-            <input
-              @change="changeAnnouncementStatus"
-              id="checkbox1"
-              type="checkbox"
-              :checked="isCbeAnnouncement"
-              class="w-h-14"
-            />
-            <label for="checkbox1" class="clr-purple-02 fnt-size-05"
-              >post an CBE announcement</label
-            >
-          </div>
-
-          <div class="flex-r-c">
-            <input
-              id="checkbox2"
-              type="checkbox"
-              :checked="active"
-              @change="changeActiveStatus"
-              class="w-h-14"
-            />
-            <label for="checkbox2" class="clr-purple-02 fnt-size-05"
-              >mark as active</label
-            >
-          </div>
-        </section>
-        <section class="flex-c-s">
-          <label for="title" class="fnt-wgt-600">Title</label>
-          <input
-            id="title"
-            v-model="title"
-            class="width-400 pdg-05 bdr-02-s-p bdr-r-025"
-          />
-        </section>
-        <section class="flex-c-s">
-          <div class="wrapper">
-            <label for="dropdown" class="fnt-wgt-600">Select type</label>
-            <select
-              id="dropdown"
-              class="dropDown pdg-05 bdr-02-s-p bdr-r-025 clr-purple-02"
-              v-model="type"
-            >
-              <option value="instagram">instagram</option>
-              <option value="youtube">youtube</option>
-              <option value="event">event</option>
-              <option value="article">article</option>
-              <option value="vacancy">vacancy</option>
-            </select>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="white"
-              class="arrow-down pdg-t-05 pdg-il-025"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+    <form v-on:submit.prevent="updateEntry">
+      <div class="flex-c-c-g30">
+        <div class="felx-c-g10">
+          <section class="checkbox-wrapper">
+            <div class="flex-r-c">
+              <input
+                @change="changeAnnouncementStatus"
+                id="checkbox1"
+                type="checkbox"
+                :checked="isCbeAnnouncement"
+                class="w-h-14"
               />
-            </svg>
-          </div>
-        </section>
-        <section class="flex-c-s">
-          <label for="url" class="fnt-wgt-600">URL</label>
-          <input
-            id="url"
-            v-model="url"
-            class="width-400 pdg-05 bdr-02-s-p bdr-r-025"
-          />
-        </section>
+              <label for="checkbox1" class="clr-purple-02 fnt-size-05"
+                >post an CBE announcement</label
+              >
+            </div>
+
+            <div class="flex-r-c">
+              <input
+                id="checkbox2"
+                type="checkbox"
+                :checked="active"
+                @change="changeActiveStatus"
+                class="w-h-14"
+              />
+              <label for="checkbox2" class="clr-purple-02 fnt-size-05"
+                >mark as active</label
+              >
+            </div>
+          </section>
+          <section class="flex-c-s">
+            <label for="title" class="fnt-wgt-600">Title</label>
+            <input
+              id="title"
+              v-model="title"
+              class="width-400 pdg-05 bdr-02-s-p bdr-r-025"
+            />
+          </section>
+          <section class="flex-c-s">
+            <div class="wrapper">
+              <label for="dropdown" class="fnt-wgt-600">Select type</label>
+              <select
+                id="dropdown"
+                class="dropDown pdg-05 bdr-02-s-p bdr-r-025 clr-purple-02"
+                v-model="type"
+              >
+                <option value="instagram">instagram</option>
+                <option value="youtube">youtube</option>
+                <option value="event">event</option>
+                <option value="article">article</option>
+                <option value="vacancy">vacancy</option>
+              </select>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                class="arrow-down pdg-t-05 pdg-il-025"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                />
+              </svg>
+            </div>
+          </section>
+          <section class="flex-c-s">
+            <label for="url" class="fnt-wgt-600">URL</label>
+            <input
+              id="url"
+              v-model="url"
+              class="width-400 pdg-05 bdr-02-s-p bdr-r-025"
+            />
+          </section>
+        </div>
+        <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Save</button>
       </div>
-      <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Save</button>
-    </div>
-  </form>
+    </form>
+  </main>
 </template>
 
 <script>
@@ -146,6 +148,10 @@ export default {
 </script>
 
 <style scoped>
+main {
+  min-height: calc(100vh - 255px);
+}
+
 h1 {
   font-size: 1.5rem;
   font-weight: 600;
