@@ -73,8 +73,7 @@
       </div>
       <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Save</button>
       <div v-if="submitted" class="thank-you-message">
-        Thank you for submitting, you are a great Admin! You will be redirected
-        in 5s
+        {{ counterMessage }}
       </div>
     </div>
   </form>
@@ -94,6 +93,7 @@ export default {
       active: "",
       isCbeAnnouncement: "",
       submitted: false,
+      counterMessage: "",
     };
   },
   methods: {
@@ -115,6 +115,14 @@ export default {
     },
     async saveEntry() {
       this.submitted = true;
+      let counter = 4;
+      const countdown = setInterval(() => {
+        this.counterMessage = `Thank you for your Suggestion! You will be redirected in ${counter}s`;
+        counter--;
+        if (counter < 0) {
+          clearInterval(countdown);
+        }
+      }, 1000);
       setTimeout(() => {
         this.submitted = false;
         this.$router.push("./");
