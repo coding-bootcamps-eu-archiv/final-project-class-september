@@ -129,7 +129,7 @@ export default {
 
 <style scoped>
 main {
-  min-height: calc(100vh - 255px);
+  min-height: calc(100vh - 295px);
 }
 
 .thank-you-message {
