@@ -1,7 +1,7 @@
 <template>
   <tr>
     <td>
-      <a :href="url" class="link-style"> {{ title }}</a>
+      <a :href="url" target="_blank" class="link-style"> {{ title }}</a>
       <p class="status-style" v-if="isSuggestion">Suggestion, please review</p>
       <p class="status-style" v-else-if="isActive === false">
         Entry is not released

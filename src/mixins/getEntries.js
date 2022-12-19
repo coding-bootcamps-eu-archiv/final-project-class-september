@@ -13,8 +13,7 @@ export default {
       );
 
       const data = await response.json();
-
-      this.entries = data;
+      this.entries = data.sort((a, b) => b.createdAt - a.createdAt);
     } catch (error) {
       console.error(error);
     }
