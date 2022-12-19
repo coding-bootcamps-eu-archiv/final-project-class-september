@@ -74,7 +74,11 @@
                   }}</a>
                 </h2>
 
-                <p class="type-styling">{{ entry.type }}</p>
+                <p class="type-styling">
+                  {{ entry.type }} •
+                  {{ new Date(entry.createdAt).toLocaleDateString() }} •
+                  {{ new Date(entry.createdAt).toLocaleTimeString() }}
+                </p>
               </div>
             </td>
           </tr>
