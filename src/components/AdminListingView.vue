@@ -163,7 +163,6 @@ export default {
       this.entries = filteredEntries;
     },
     searchedWord(event) {
-      console.log("hi");
       this.typedWord = event.target.value;
     },
     async triggerRelease(index) {
