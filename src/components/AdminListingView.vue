@@ -232,9 +232,9 @@ main {
 }
 
 .active {
-  background-color: var(--clr-white-02);
+  background-color: var(--clr-purple-02);
 }
 .suggestion {
-  background-color: var(--clr-white-02);
+  background-color: var(--clr-purple-02);
 }
 </style>
