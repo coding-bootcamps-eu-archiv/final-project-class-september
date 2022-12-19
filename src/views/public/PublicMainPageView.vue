@@ -122,7 +122,14 @@ export default {
       }
       return "";
     },
-    searchForEntries() {
+    async searchForEntries() {
+      const response = await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries"
+      );
+      const data = await response.json();
+
+      this.entries = data.sort((a, b) => b.createdAt - a.createdAt);
+
       const filteredEntries = this.entries.filter(
         (entry) =>
           entry.title.includes(this.typedWord) ||
@@ -157,7 +164,6 @@ h2 {
   .around {
     width: 960px;
     margin: 0 auto;
-    
   }
 }
 .story-link {
