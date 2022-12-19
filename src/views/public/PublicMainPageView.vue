@@ -38,6 +38,13 @@
             >
               <img :src="instagram" />
             </td>
+            <td
+              v-else-if="
+                entry.isCbeAnnouncement === false && entry.type === 'event'
+              "
+            >
+              <img :src="event" />
+            </td>
             <td v-else-if="entry.isCbeAnnouncement === true">
               <img
                 class="CBE"
@@ -67,7 +74,11 @@
                   }}</a>
                 </h2>
 
-                <p class="type-styling">{{ entry.type }}</p>
+                <p class="type-styling">
+                  {{ entry.type }} •
+                  {{ new Date(entry.createdAt).toLocaleDateString() }} •
+                  {{ new Date(entry.createdAt).toLocaleTimeString() }}
+                </p>
               </div>
             </td>
           </tr>
@@ -183,6 +194,7 @@ import instagram from "@/assets/instagram.svg";
 import lupe from "@/assets/lupe.svg";
 import article from "@/assets/article.svg";
 import youtube from "@/assets/youtube.svg";
+import event from "@/assets/event.svg";
 export default {
   data() {
     return {
@@ -192,6 +204,7 @@ export default {
       lupe,
       article,
       youtube,
+      event,
     };
   },
   name: "publicView",
@@ -201,7 +214,6 @@ export default {
     BiFileCodeIcon,
   },
   mixins: [getEntriesMixin],
-  computed: {},
   methods: {
     announcementStyle(entry) {
       if (entry.isCbeAnnouncement) {
