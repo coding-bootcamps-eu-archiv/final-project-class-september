@@ -126,9 +126,7 @@ export default {
 
       this.entries = data.sort((a, b) => b.createdAt - a.createdAt);
     },
-    triggerEdit(index) {
-      console.log(this.entries[index]);
-    },
+    triggerEdit() {},
     async triggerRelease(index) {
       const currentEntry = this.entries[index];
       const id = this.entries[index].id;
