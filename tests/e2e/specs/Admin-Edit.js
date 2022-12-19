@@ -3,7 +3,9 @@ describe("Admin-edit", () => {
     cy.visit("/admin");
     cy.get(":nth-child(1) > .options-style > a > .btn-edit > .bi > path");
     cy.get(":nth-child(1) > .options-style > a > .btn-edit > .bi").click();
+    cy.wait(2000);
     cy.get("#title").clear();
+    cy.wait(2000);
     cy.get("#title").type("I'm a e2e test");
     cy.get("#dropdown").select("vacancy");
     cy.get("#url").clear();

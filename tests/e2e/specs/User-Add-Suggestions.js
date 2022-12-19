@@ -1,5 +1,5 @@
-describe("Admin-edit", () => {
-  it("Visits the Admin page and edit an entry", () => {
+describe("User-add Suggestions", () => {
+  it("Visits the Public page and add sugesstions", () => {
     cy.visit("/public");
     cy.get(".create").click();
     cy.get("#title").type("We are the Champions");
