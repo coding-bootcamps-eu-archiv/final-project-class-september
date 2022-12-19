@@ -1,7 +1,7 @@
 <template>
-  <main class="style around">
+  <div v-text="'Open Suggestions: ' + suggestionsCounter"></div>
+  <main class="style">
     <section class="table-item">
-      <div v-text="'Open Suggestions: ' + suggestionsCounter"></div>
       <div class="around">
         <table class="table-item__table">
           <thead>
@@ -149,23 +149,22 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (min-width: 1140px) {
-  .around {
-    width: 960px;
-    margin: 0 auto;
+@media screen and (min-width: 375px) {
+  .style {
+    font-size: 10px;
   }
 }
-
+@media screen and (min-width: 700px) {
+  .style {
+    font-size: 15px;
+  }
+}
 .table-item__table {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 1em;
   font-weight: bold;
   box-shadow: 0 0 20px var(--clr-black-01);
-  width: 100%;
-}
-.table-item__table-head-name {
-  width: 43%;
 }
 
 .table-item__table thead tr {
