@@ -64,6 +64,8 @@ template {
   --clr-blue-02: hsl(203, 89%, 53%);
   --clr-blue-03: hsl(210, 90, 40%);
   --clr-green-01: hsl(120, 47%, 46%); /*create*/
+  --clr-blue-05: rgba(37, 166, 220, 0.5);
+  --clr-green-05: rgba(37, 248, 110, 0.38);
 }
 
 /******** utilities *******/

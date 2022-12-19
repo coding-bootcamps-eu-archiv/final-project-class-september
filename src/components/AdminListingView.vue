@@ -231,9 +231,11 @@ main {
 }
 
 .active {
-  background-color: var(--clr-purple-02);
+  background-color: var(--clr-green-05);
+  
 }
+
 .suggestion {
-  background-color: var(--clr-purple-02);
+  background-color: var(--clr-blue-05);
 }
 </style>
