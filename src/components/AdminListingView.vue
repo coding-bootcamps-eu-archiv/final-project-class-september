@@ -1,4 +1,13 @@
 <template>
+  <div>
+    <SearchInput @searchEntries="searchForEntries" @searchWord="searchedWord" />
+    <SearchButton />
+  </div>
+  <div class="create-wrapper">
+    <router-link to="/admin/create">
+      <button class="create">+ create</button>
+    </router-link>
+  </div>
   <div v-text="'Open Suggestions: ' + suggestionsCounter"></div>
   <main class="style">
     <section class="table-item">
@@ -82,10 +91,19 @@
 <script>
 import AdminListingViewRow from "@/components/AdminListingViewRow.vue";
 import getEntriesMixin from "@/mixins/getEntries";
+import SearchInput from "./SearchInput.vue";
+import SearchButton from "./SearchButton.vue";
 
 export default {
+  data() {
+    return {
+      typedWord: "",
+    };
+  },
   components: {
     AdminListingViewRow,
+    SearchInput,
+    SearchButton,
   },
   mixins: [getEntriesMixin],
   computed: {
@@ -127,6 +145,27 @@ export default {
       this.entries = data.sort((a, b) => b.createdAt - a.createdAt);
     },
     triggerEdit() {},
+
+    async searchForEntries() {
+      const response = await fetch(
+        "https://attendee-feed-app-api.jgreg.uber.space/entries"
+      );
+      const data = await response.json();
+
+      this.entries = data.sort((a, b) => b.createdAt - a.createdAt);
+
+      const filteredEntries = this.entries.filter(
+        (entry) =>
+          entry.title.includes(this.typedWord) ||
+          entry.type.includes(this.typedWord)
+      );
+
+      this.entries = filteredEntries;
+    },
+    searchedWord(event) {
+      console.log("hi");
+      this.typedWord = event.target.value;
+    },
     async triggerRelease(index) {
       const currentEntry = this.entries[index];
       const id = this.entries[index].id;
@@ -158,6 +197,31 @@ export default {
   .style {
     font-size: 15px;
   }
+}
+
+.create-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.create {
+  border-radius: 10px;
+  background-color: var(--clr-white-02);
+  color: var(--clr-purple-01);
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border: 2px solid var(--clr-white-02);
+  border: 2px solid var(--clr-white-02);
+}
+.create:active {
+  background-color: var(--clr-white-02);
+  color: var(--clr-green-01);
+
+  cursor: pointer;
+  border: 2px solid var(--clr-green-01);
 }
 .table-item__table {
   border-collapse: collapse;
@@ -232,7 +296,6 @@ main {
 
 .active {
   background-color: var(--clr-green-05);
-  
 }
 
 .suggestion {
