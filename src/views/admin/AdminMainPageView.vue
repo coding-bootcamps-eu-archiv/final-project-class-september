@@ -1,58 +1,23 @@
 <template>
   <main>
     <h1 class="admin-heading">Admin-Main-Page</h1>
-    <div>
-      <SearchInput />
-      <SearchButton />
-    </div>
-    <div class="create-wrapper">
-      <router-link to="/admin/create">
-        <button class="create">+ create</button>
-      </router-link>
-    </div>
+
     <AdminListingView />
   </main>
 </template>
 
 <script>
 import AdminListingView from "@/components/AdminListingView.vue";
-import SearchInput from "@/components/SearchInput.vue";
-import SearchButton from "@/components/SearchButton.vue";
+
 export default {
   name: "MainPage",
   components: {
     AdminListingView,
-    SearchInput,
-    SearchButton,
   },
 };
 </script>
 
 <style scoped>
-.create-wrapper {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-
-.create {
-  border-radius: 10px;
-  background-color: var(--clr-white-02);
-  color: var(--clr-purple-01);
-  font-weight: bold;
-  letter-spacing: 3px;
-  cursor: pointer;
-  border: 2px solid var(--clr-white-02);
-  border: 2px solid var(--clr-white-02);
-}
-.create:active {
-  background-color: var(--clr-white-02);
-  color: var(--clr-green-01);
-
-  cursor: pointer;
-  border: 2px solid var(--clr-green-01);
-}
 .route-link {
   box-sizing: border-box;
   display: flex;
