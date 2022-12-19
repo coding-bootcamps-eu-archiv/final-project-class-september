@@ -70,6 +70,7 @@
           <section class="flex-c-s">
             <label for="url" class="fnt-wgt-600">URL</label>
             <GeneralInputField id="url" @input="updateUrl" variant="primary" />
+            <div v-if="wrongURL" class="no-valid-url">Ungültige URL</div>
           </section>
         </div>
         <button class="width-400 pdg-05 bdr-02-s-p bdr-r-025">Save</button>
@@ -92,6 +93,7 @@ export default {
       title: "",
       type: "",
       url: "",
+      wrongURL: false,
       active: "",
       isCbeAnnouncement: "",
       submitted: false,
@@ -113,7 +115,19 @@ export default {
     },
 
     updateUrl(event) {
-      this.url = event.target.value;
+      const url = event.target.value;
+
+      const regex =
+        /^((?:(?:(?:https?|ftp):)?\/\/)?)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+
+      if (!regex.test(url)) {
+        (this.wrongURL = true), console.error("Invalid URL");
+
+        return;
+      }
+
+      this.wrongURL = false;
+      this.url = url;
     },
     async saveEntry() {
       this.submitted = true;
@@ -338,5 +352,10 @@ button:hover {
   to {
     background-position: 400%;
   }
+}
+
+.no-valid-url {
+  color: red;
+  font-size: 10px;
 }
 </style>
