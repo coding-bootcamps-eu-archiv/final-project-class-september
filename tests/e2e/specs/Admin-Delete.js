@@ -1,4 +1,4 @@
-// https://docs.cypress.io/api/table-of-contents
+// https://docs.cypress.io/api/table-of-contentss
 
 describe("Admin-Delete", () => {
   it("Visits the Admin page and delete a entry", () => {

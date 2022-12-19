@@ -1,4 +1,4 @@
-// https://docs.cypress.io/api/table-of-contents
+// https://docs.cypress.io/api/table-of-contentss
 
 describe("Admin-create", () => {
   it("Visits the Admin page and create a new entry", () => {

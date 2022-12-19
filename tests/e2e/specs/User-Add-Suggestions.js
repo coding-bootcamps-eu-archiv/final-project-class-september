@@ -1,3 +1,4 @@
+// https://docs.cypress.io/api/table-of-contents
 describe("User-add Suggestions", () => {
   it("Visits the Public page and add sugesstions", () => {
     cy.visit("/public");

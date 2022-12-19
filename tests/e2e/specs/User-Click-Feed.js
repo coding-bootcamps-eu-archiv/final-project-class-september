@@ -1,3 +1,4 @@
+// https://docs.cypress.io/api/table-of-contents
 describe("User-click-Feed", () => {
   it("Visits the Public page and click on a Feed", () => {
     cy.visit("/public");

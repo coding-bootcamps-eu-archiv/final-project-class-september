@@ -1,3 +1,4 @@
+// https://docs.cypress.io/api/table-of-contentss
 describe("Admin-edit", () => {
   it("Visits the Admin page and edit an entry", () => {
     cy.visit("/admin");
