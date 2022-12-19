@@ -163,7 +163,7 @@ export default {
   margin: 25px 0;
   font-size: 1em;
   font-weight: bold;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px var(--clr-black-01);
   width: 100%;
 }
 .table-item__table-head-name {
@@ -179,7 +179,7 @@ export default {
   padding: 12px 15px;
 }
 .table-item__table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid var(--clr-grey-01);
 }
 
 main {
@@ -188,11 +188,11 @@ main {
 }
 
 .cbe-announcement-true {
-  border: purple;
-  background-color: black;
+  border: var(--clr-purple-01);
+  background-color: var(--clr-black-01);
 }
 .cbe-announcement-false {
-  border: grey;
+  border: var(--clr-gray-01);
 }
 .type {
   display: flex;
@@ -234,9 +234,9 @@ main {
 }
 
 .active {
-  background-color: rgb(240, 240, 240);
+  background-color: var(--clr-white-02);
 }
 .suggestion {
-  background-color: rgb(224, 224, 224);
+  background-color: var(--clr-white-02);
 }
 </style>

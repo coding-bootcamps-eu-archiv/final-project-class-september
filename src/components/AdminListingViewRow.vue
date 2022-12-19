@@ -71,7 +71,7 @@ export default {
   justify-content: space-evenly;
 }
 .url-styling {
-  color: rgb(183, 183, 183);
+  color: var(--clr-gray-01);
 }
 td {
   padding: 20px;
@@ -79,11 +79,11 @@ td {
 
 .link-style {
   text-decoration: none;
-  color: black;
+  color: var(--clr-black-01);
 }
 
 .status-style {
   font-size: 12px;
-  color: grey;
+  color: var(--clr-gray-01);
 }
 </style>

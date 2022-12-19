@@ -55,6 +55,9 @@ template {
   --clr-meganta-02: salmon; /*release?*/
   --clr-blue-01: dodgerblue; /*edit*/
   --clr-green-01: rgb(63, 174, 63); /*create*/
+  --clr-black-01: black;
+  --clr-gray-01: gray;
+  --clr-grey-01: #dddddd;
 }
 
 /******** utilities *******/

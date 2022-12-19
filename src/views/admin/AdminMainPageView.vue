@@ -146,7 +146,7 @@ export default {
   font-weight: bold;
   letter-spacing: 3px;
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid var(--clr-white-02);
 }
 .create:active {
   background-color: var(--clr-white-02);
@@ -175,7 +175,7 @@ footer {
   justify-content: center;
   height: 120px;
   background-color: var(--clr-purple-01);
-  color: white;
+  color: var(--clr-white-02);
   padding-top: 20px;
   font-family: "Courier New", Courier, monospace;
 }

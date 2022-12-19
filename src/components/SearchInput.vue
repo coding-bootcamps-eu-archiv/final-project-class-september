@@ -49,11 +49,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-_form {
-  max-width: 400px;
-  position: relative;
-}
-
 .search-bar {
   font-size: 1rem;
   width: 120%;
@@ -79,13 +74,13 @@ _form {
   cursor: pointer;
 }
 .backg:hover {
-  color: black;
+  color: var(--clr-black-01);
 }
 .search-icon {
   position: absolute;
   right: 15px;
   top: 10px;
-  color: white;
+  color: var(--clr-white-02);
 }
 .search-icon:hover {
   box-shadow: 2px 2px 2px 2px var(--clr-purple-1);

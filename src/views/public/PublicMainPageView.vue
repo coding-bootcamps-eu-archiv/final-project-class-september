@@ -241,7 +241,7 @@ h2 {
 .story-link {
   text-decoration: none;
   font-size: 35px;
-  color: black;
+  color: var(--clr-black-01);
   font-weight: 100;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -261,8 +261,8 @@ table {
 
 tr {
   height: 100px;
-  border-bottom-style: 15px solid black;
-  border-top: 1px solid gray;
+  border-bottom-style: 15px solid var(--clr-black-01);
+  border-top: 1px solid var(--clr-gray-01);
 }
 tr:hover {
   -webkit-box-shadow: 0px 0px 25px 0px rgba(189, 110, 238, 0.674);
@@ -283,7 +283,7 @@ tr:hover {
   color: var(--clr-purple-01);
   font-weight: bold;
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid var(--clr-white-02);
 }
 .create:active {
   background-color: var(--clr-white-02);
@@ -309,7 +309,7 @@ nav {
 }
 
 .type-styling {
-  color: grey;
+  color: var(--clr-gray-01);
   margin-left: 50px;
 }
 .public-heading {
@@ -321,7 +321,7 @@ footer {
   justify-content: center;
   height: 120px;
   background-color: var(--clr-purple-01);
-  color: white;
+  color: var(--clr-white-02);
   padding-top: 20px;
   font-family: "Courier New", Courier, monospace;
 }
@@ -345,10 +345,9 @@ footer {
 
 /* Styling for official cbe announcement posts */
 .highlight-entry {
-  _border: 4px solid purple;
   transition: 0.3s;
 }
-/*
+
 .highlight-entry:hover {
   background: linear-gradient(
     90deg,
@@ -388,5 +387,5 @@ footer {
 .highlight-entry:hover::before {
   z-index: -1;
   opacity: 0;
-}*/
+}
 </style>
