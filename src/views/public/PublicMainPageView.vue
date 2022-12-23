@@ -132,8 +132,8 @@ export default {
 
       const filteredEntries = this.entries.filter(
         (entry) =>
-          entry.title.toLowerCase().includes(this.typedWord) ||
-          entry.type.toLowerCase().includes(this.typedWord)
+          entry.title.toLowerCase().includes(this.typedWord.toLowerCase()) ||
+          entry.type.toLowerCase().includes(this.typedWord.toLowerCase())
       );
 
       this.entries = filteredEntries;
